@@ -40,7 +40,7 @@
           "dependencies": {
             "Neo4jClient": {
               "target": "Package",
-              "version": "[4.1.1, )"
+              "version": "[1.1.0.14, )"
             }
           },
           "imports": [

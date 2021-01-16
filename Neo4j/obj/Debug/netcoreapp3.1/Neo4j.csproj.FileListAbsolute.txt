@@ -9,10 +9,8 @@ E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4j.dll
 E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4j.pdb
 E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4j.Views.dll
 E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4j.Views.pdb
-E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4j.Driver.dll
 E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4jClient.dll
 E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
-E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.csprojAssemblyReference.cache
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.csproj.CoreCompileInputs.cache
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.MvcApplicationPartsAssemblyInfo.cache
