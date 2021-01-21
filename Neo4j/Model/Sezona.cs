@@ -7,5 +7,6 @@ namespace Neo4j.Model
         public Serija serija {get; set;}
         public List<Epizoda> epizode {get; set;}
         public int brojSezone {get; set;}
+        public string nazivSezone {get; set;}
     }
 }

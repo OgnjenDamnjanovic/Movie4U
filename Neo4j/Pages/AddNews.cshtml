@@ -1,0 +1,149 @@
+﻿@page
+@model MyApp.Namespace.AddNewsModel
+@{
+}
+
+<head>
+    <link rel="stylesheet" href="css/style.css">
+    
+</head>
+</br>
+</br></br></br>
+<style>
+     #dodajVest
+ {
+     margin-left: 20px;
+ }
+.labeled-input
+{
+    display: flex;
+    flex-direction: column;
+}
+ .space-out
+ {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     width: 45%;
+     
+ }
+ .space-out>*
+ {
+     margin-right: 35px;
+     margin-top: 5px;
+    
+ }
+</style>
+
+<form method="POST" id="dodajVest"><h1>Unesite podatke o vesti </h1></br></br>
+<input type="hidden" asp-for="novaVest.id"> 
+<span class="space-out">
+   <div class="labeled-input"> <label>Naslov:</label> <input style="width:500px"type="text" asp-for="novaVest.naslov"></div>
+   
+</span></br>
+
+
+
+</br></br></br>
+<div style="display: flex;flex-direction:row; justify-content:space-between; width:50%;">
+<div>
+<label>Unesite opis:</label><br/>
+<textarea asp-for="novaVest.opis" rows="10" cols="50"></textarea> <br><br><br>
+</div>
+
+<div style="margin-left: 10%;">
+<label>Import photo</label>
+<div class="bi-image">
+
+<input id="import-files" type="file" accept="image/*" />
+<img id="imported-img"src="">
+</div>						  
+     					
+</div>
+
+</div>
+
+<span style="display:flex; flex-direction:row;"><label>Pomenuti filmovi i serije:</label>&nbsp; <input type="text" id="unos"><button type="button" id="dodaj">Dodaj</button></span>
+<ul style="margin-left:10px"id="dodate">
+
+</ul>
+
+
+
+<input type="text" id="serialized-data" asp-for="pomenuti"  hidden>
+<input type="text" id="serialized-picture" asp-for="novaVest.slika"  hidden>
+<button type="submit">Dodaj vest</button>
+</form>
+<br><br><br><br><br><br>
+
+<script>
+    document.querySelector("#dodajVest").onsubmit=()=>{
+        document.getElementById("serialized-picture").value=document.querySelector("#imported-img").src;
+        let string="";
+        document.querySelectorAll(".pomenuti-data").forEach((el)=>
+        {
+            string+=el.innerHTML+";";
+
+
+        });
+         document.getElementById("serialized-data").value=string;
+    }
+
+
+     document.querySelector("#dodaj").onclick=(ev)=>{
+         let inp=document.querySelector("#unos");
+        let lab=document.createElement("label")
+        lab.innerHTML=inp.value;
+        lab.className="pomenuti-data";
+        let li=document.createElement("li");
+
+
+        li.appendChild(lab);
+        let dugme=document.createElement("button");
+        dugme.type="button";
+        dugme.innerHTML="Ukloni"
+        dugme.onclick=(ev)=>{
+            ev.target.parentElement.remove();
+          }
+          li.appendChild(dugme);
+          
+        document.querySelector("#dodate").appendChild(li);
+        inp.value="";
+        
+     
+        return false;
+    }
+     document.querySelectorAll(".ukloni").onclick=(ev)=>{
+            console.log(ev.target.parentElement);
+        return false;
+    }
+  
+  
+    window.onload = function(){
+  
+    //Check File API support
+    if(window.File && window.FileList && window.FileReader)
+    {
+        var filesInput = document.getElementById("import-files");
+        
+        filesInput.addEventListener("change", function pictureNotificationMessage(event){
+            file=event.target.files[0];
+            var picReader = new FileReader();
+            picReader.fileName=file.name;
+            picReader.readAsDataURL(file);
+            picReader.addEventListener("load",function(event){
+         
+            let imgElement=document.querySelector("#imported-img");
+              imgElement.style.width="300px";
+                 imgElement.style.height="300px";
+                 imgElement.src=event.target.result; 
+               
+              
+            });
+
+        
+		});      
+
+	}
+    }
+				</script>

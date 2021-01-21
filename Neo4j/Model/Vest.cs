@@ -9,5 +9,8 @@ namespace Neo4j.Model
         public string opis {get; set;}
         public DateTime datumPostavljanja {get; set;}
         public int brojLajkova {get; set;}
+        public string objavio {get; set;}
+        public string slika {get; set;}
+
     }
 }

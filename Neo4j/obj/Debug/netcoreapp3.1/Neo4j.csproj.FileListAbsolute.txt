@@ -23,15 +23,12 @@ E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.TagHelpers.output.
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.RazorCoreGenerate.cache
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\ExploreMovies.cshtml.g.cs
-E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\ExploreTvShows.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
-E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Movie.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\News-single.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\News.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
-E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\TvShow.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.RazorTargetAssemblyInfo.cache
@@ -44,4 +41,10 @@ E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.dll
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.pdb
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Neo4j.genruntimeconfig.cache
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Episode.cshtml.g.cs
+E:\Napredne baze projekti\Neo4j\bin\Debug\netcoreapp3.1\Neo4j.Driver.dll
+E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Login.cshtml.g.cs
+E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\AddNews.cshtml.g.cs
+E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\ExploreTvShows.cshtml.g.cs
+E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Movie.cshtml.g.cs
 E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\Season.cshtml.g.cs
+E:\Napredne baze projekti\Neo4j\obj\Debug\netcoreapp3.1\Razor\Pages\TvShow.cshtml.g.cs

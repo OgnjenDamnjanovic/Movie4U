@@ -14402,6 +14402,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "e:\\Napredne baze projekti\\Neo4j\\Pages\\Login.cshtml",
+      "TargetPath": "Pages\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "e:\\Napredne baze projekti\\Neo4j\\Pages\\ExploreMovies.cshtml",
       "TargetPath": "Pages\\ExploreMovies.cshtml",
       "FileKind": "mvc"
@@ -14454,6 +14459,11 @@
     {
       "FilePath": "e:\\Napredne baze projekti\\Neo4j\\Pages\\Movie.cshtml",
       "TargetPath": "Pages\\Movie.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "e:\\Napredne baze projekti\\Neo4j\\Pages\\AddNews.cshtml",
+      "TargetPath": "Pages\\AddNews.cshtml",
       "FileKind": "mvc"
     },
     {

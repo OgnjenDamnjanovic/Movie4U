@@ -1,0 +1,520 @@
+CREATE (BandofBrothers:Serija {nazivSerije:"Band of Brothers", opis:"Ovo je prica o Easy company grupi 506. puka 101. vazdusne divizije od njihove pocetne obuke 1942. godina do kraja Drugog svetskog rata.", zanr:'Akcija', pilot:'2001', jezik:'engleski', zavrsena:'true', zbirOcena:24, brOcena:3, avgOcena:8, slika:'images/bandofbrothers.png', slikaP:'images/bandofbrothersP.jpg'})
+CREATE (Scott:Glumac {ime:'Scott', prezime:'Grimes', godinaRodjenja:1971})
+CREATE (Damian:Glumac {ime:'Damian', prezime:'Lewis', godinaRodjenja:1971})
+CREATE (Ron:Glumac {ime:'Ron', prezime:'Livingston', godinaRodjenja:1967})
+CREATE (Shane:Glumac {ime:'Shane', prezime:'Taylor', godinaRodjenja:1974})
+CREATE (Donnie:Glumac {ime:'Donnie', prezime:'Wahlberg', godinaRodjenja:1969})
+CREATE (Peter:Glumac {ime:'Peter Youngblood', prezime:'Hills', godinaRodjenja:1978})
+CREATE (TomH:Reziser {ime:'Tom', prezime:'Hanks', godinaRodjenja:1956})
+CREATE (BoBS1:Sezona {brojSezone:1, nazivSezone:'Band of Brothers: Season 1'})
+CREATE (BoBE1:Epizoda {nazivEpizode:"Currahee", opis:"Easy company prolazi kroz obuku pod vodjstvom kapetana koji ih neumorno gura do krajnjih granica.", datumObjave:'2001-09-9 04:05+0000'})
+CREATE (BoBE2:Epizoda {nazivEpizode:"Day od days", opis:"Easy company padobranci skacu iza neprijateljskih linija u Normandiji na Dan D i bore se da se ponovo okupe na neprijateljskoj teritoriji.", datumObjave:'2001-09-09 04:05+0000'})
+CREATE (BoBE3:Epizoda {nazivEpizode:"Carentan", opis:"Easy company preuzima nemacke trupe u francuskom gradu Karentanu, a bitka uzima danak jednom vojniku.", datumObjave:'2001-09-16 04:05+0000'})
+CREATE (BoBE4:Epizoda {nazivEpizode:"Replacements", opis:"Uz dodatak mnogih novih ljudi, Easy Company odlazi u Holandiju da ucestvuje u operaciji Market Garden i pripremi saveznicki put u Nemacku, ali nailazi na tvrdi nemacki otpor.", datumObjave:'2001-09-23 04:05+0000'})
+CREATE (BoBE5:Epizoda {nazivEpizode:"Crossroads", opis:"Vinters pise izvestaj o izazovu neocekivanog otpora nemackom napadu, a progoni ga savest nakon sto je pucao u nemackog vojnika.", datumObjave:'2001-09-30 04:05+0000'})
+CREATE (BoBE6:Epizoda {nazivEpizode:"Bastogne", opis:"U jeku zime, ljudi Easy Company odbijaju ozebline i glad - pored neprijatelja - dok drze liniju u sumi izvan Bastogne-a. U medjuvremenu, iscrpljeni medicinar Eugene Roe pronalazi prijateljstvo sa belgijskom medicinskom sestrom.", datumObjave:'2001-10-07 04:05+0000'})
+CREATE (BoBE7:Epizoda {nazivEpizode:"The breaking point", opis:"Easy Company ostaje u Ardenskoj sumi pripremajuci se za neizbezni napad na nemacke snage u gradu Foi. Medjutim, moral je nizak zbog hladnog vremena, stalnih granatiranja, loseg vodjstva i brojnih zrtava.", datumObjave:'2001-10-14 04:05+0000'})
+CREATE (BoBE8:Epizoda {nazivEpizode:"The last patrol", opis:"Easy Company je u Hagenauu u februaru 1945. godine, gde se pripremaju za nocnu patrolnu misiju za hvatanje nemackih zatvorenika. Patrola ukljucuje jednog veterana koji je prezren zbog nestanka Bastognea i novog porucnika koji je tek izasao iz Vest Pointa", datumObjave:'2001-10-21 04:05+0000'})
+CREATE (BoBE9:Epizoda {nazivEpizode:"Why we fight", opis:"Kako se saveznici useljavaju u Nemacku, a rat blizi kraju, razocaranje i bes nastali su u kompaniji Easy Company - sve dok ne nalete na koncentracioni logor koji je napustila nemacka vojska.", datumObjave:'2001-10-28 04:05+0000'})
+CREATE (BoBE10:Epizoda {nazivEpizode:"Points", opis:"Kako se Nemci predaju, cini se da su teski dani za Easy Company prosli jer su bili stacionirani u Austriji. Ali ubrzo saznaju da ce oni bez dovoljno servisne opreme biti poslati da se bore u Japanu.", datumObjave:'2001-11-04 04:05+0000'})
+CREATE
+  (Scott)-[:ACTED_IN {uloga:['Donald Malarkey']}]->(BandofBrothers),
+  (Damian)-[:ACTED_IN {uloga:['Richard Winters']}]->(BandofBrothers),
+  (Ron)-[:ACTED_IN {uloga:['Lewis Nixon']}]->(BandofBrothers),
+  (Shane)-[:ACTED_IN {uloga:['Eugene Roe']}]->(BandofBrothers),
+  (Donnie)-[:ACTED_IN {uloga:['Carwood Lipton']}]->(BandofBrothers),
+  (Peter)-[:ACTED_IN {uloga:['Darrell (Shifty) Powers']}]->(BandofBrothers),
+  (TomH)-[:DIRECTED]->(BandofBrothers),
+  (BandofBrothers)-[:SEASON]->(BoBS1),
+  (BoBS1)-[:EPISODE]->(BoBE1),
+  (BoBS1)-[:EPISODE]->(BoBE2),
+  (BoBS1)-[:EPISODE]->(BoBE3),
+  (BoBS1)-[:EPISODE]->(BoBE4),
+  (BoBS1)-[:EPISODE]->(BoBE5),
+  (BoBS1)-[:EPISODE]->(BoBE6),
+  (BoBS1)-[:EPISODE]->(BoBE7),
+  (BoBS1)-[:EPISODE]->(BoBE8),
+  (BoBS1)-[:EPISODE]->(BoBE9),
+  (BoBS1)-[:EPISODE]->(BoBE10)
+
+
+
+CREATE (Chernobyl:Serija {nazivSerije:"Chernobyl", opis:"U aprilu 1986. u nuklearnoj elektrani Cernobil, na severu Ukrajine, izbila je ogromna eksplozija. Ova serija prati price ljudi koji su pokusali da zaustave katastrofu.", zanr:'Drama', pilot:'2019', jezik:'engleski', zavrsena:'true', zbirOcena:24, brOcena:3, avgOcena:8, slika:'images/chernobyl.png', slikaP:'images/chernobylP.jpg'})
+CREATE (Jessie:Glumac {ime:'Jessie', prezime:'Buckley', godinaRodjenja:1989})
+CREATE (Jared:Glumac {ime:'Jared', prezime:'Harris', godinaRodjenja:1961})
+CREATE (Stellan:Glumac {ime:'Stellan', prezime:'Skarsgard', godinaRodjenja:1951})
+CREATE (Craig:Reziser {ime:'Craig', prezime:'Mazin', godinaRodjenja:1971})
+CREATE (CS1:Sezona {brojSezone:1, nazivSezone:'Chernobyl: Season 1'})
+CREATE (CE1:Epizoda {nazivEpizode:"1:23:45", opis:"Radnici postrojenja i vatrogasci stavili su svoj zivot na kocku za kontrolu katastrofalne eksplozije u aprilu 1986. u sovjetskoj nuklearnoj elektrani.", datumObjave:'2019-05-06 04:05+0000'})
+CREATE (CE2:Epizoda {nazivEpizode:"Please remain calm", opis:"Sa nebrojano rizika, Ulana ocajnicki pokusava da dopre do Valerija i upozori ga na pretnju drugom eksplozijom.", datumObjave:'2019-05-13 04:05+0000'})
+CREATE (CE3:Epizoda {nazivEpizode:"Open wide, o Earth", opis:"Valeri kreira detaljan plan za dekontaminaciju Cernobila. Luidmila ignorise upozorenja o kontaminaciji supruga vatrogasca.", datumObjave:'2019-05-20 04:05+0000'})
+CREATE (CE4:Epizoda {nazivEpizode:"The happiness of all mankind", opis:"Valeri i Boris pokusavaju da pronadju resenje za uklanjanje radioaktivnog otpada Ulana pokusava da otkrije uzrok eksplozije.", datumObjave:'2019-05-27 04:05+0000'})
+CREATE (CE5:Epizoda {nazivEpizode:"Vinchaya Pamyat", opis:"Valeri, Boris i Ulana rizikuju svoje zivote i reputaciju kako bi razotkrili istinu o Cernobilu.", datumObjave:'2019-06-03 04:05+0000'})
+CREATE
+  (Jessie)-[:ACTED_IN {uloga:['Lyudmilla Ignatenko']}]->(Chernobyl),
+  (Jared)-[:ACTED_IN {uloga:['Valery Legasov']}]->(Chernobyl),
+  (Stellan)-[:ACTED_IN {uloga:['Boris Shcherbina']}]->(Chernobyl),
+  (Craig)-[:DIRECTED]->(Chernobyl),
+  (Chernobyl)-[:SEASON]->(CS1),
+  (CS1)-[:EPISODE]->(CE1),
+  (CS1)-[:EPISODE]->(CE2),
+  (CS1)-[:EPISODE]->(CE3),
+  (CS1)-[:EPISODE]->(CE4),
+  (CS1)-[:EPISODE]->(CE5)
+
+
+
+CREATE (Dark:Serija {nazivSerije:"Dark", opis:"Porodicna saga sa natprirodnim preokretom, smestena u nemackom gradu, gde nestanak dvoje male dece razotkriva odnose izmedju cetiri porodice.", zanr:'Drama', pilot:'2017', jezik:'nemacki', zavrsena:'true', zbirOcena:26, brOcena:4, avgOcena:6.5, slika:'images/dark.png', slikaP:'images/darkP.jpg'})
+CREATE (LouisH:Glumac {ime:'Louis', prezime:'Hofmann', godinaRodjenja:1997})
+CREATE (KarolineE:Glumac {ime:'Karoline', prezime:'Eichhorn', godinaRodjenja:1965})
+CREATE (LisaV:Glumac {ime:'Lisa', prezime:'Vicari', godinaRodjenja:1997})
+CREATE (MajaS:Glumac {ime:'Maja', prezime:'Schone', godinaRodjenja:1976})
+CREATE (StephanK:Glumac {ime:'Stephan', prezime:'Kampwirth', godinaRodjenja:1967})
+CREATE (Baran:Reziser {ime:'Baran', prezime:'bo Odar', godinaRodjenja:1978})
+CREATE (DS1:Sezona {brojSezone:1, nazivSezone:'Dark: Season 1'})
+CREATE (DS2:Sezona {brojSezone:2, nazivSezone:'Dark: Season 2'})
+CREATE (DS3:Sezona {brojSezone:3, nazivSezone:'Dark: Season 3'})
+CREATE (DS1E1:Epizoda {nazivEpizode:"Secrets", opis:"Mali nemački grad Vinden potresen je nestankom tinejdžera. Dok su stanovnici grada okupirani vlastitim tajnama, tokom noći grupa tinejdžera pokušava da povrati nešto što je nestali dečak možda ostavio za sobom.", datumObjave:'2017-12-01 03:00+0000'})
+CREATE (DS1E2:Epizoda {nazivEpizode:"Lies", opis:"Kada mračno otkriće ostavi policiju zbunjenom, Ulrich traži nalog za potragu za elektranom. Tajanstveni neznanac prijavljuje se u hotel.", datumObjave:'2017-12-01 04:00+0000'})
+CREATE (DS1E3:Epizoda {nazivEpizode:"Past and present", opis:"1986. godina je, a Ulrichovog brata Mads nema već mesec dana. Zbunjenost vlada kada se prošlost i sada prepliću.", datumObjave:'2017-12-01 04:01+0000'})
+CREATE (DS1E4:Epizoda {nazivEpizode:"Double lives", opis:"Bizarne pojave daju Charlotte osećaj deja vu, a ona sumnja da Peter nešto skriva. Franziska pukne kad se Magnus suoči sa njom.", datumObjave:'2017-12-01 04:02+0000'})
+CREATE (DS1E5:Epizoda {nazivEpizode:"Truths", opis:"Hannah predaleko vodi svoju opsesiju Ulrihom. Neznanac traži od Regine da dostavi važan paket. Marta je rastrgana između Jonasa i Bartoša.", datumObjave:'2017-12-01 04:03+0000'})
+CREATE (DS1E6:Epizoda {nazivEpizode:"Sic mundus creatus est", opis:"Ulrih gleda u prošlost tražeći odgovore i baveći uznemirujuće porodične tajne. Naoružan novim alatima, Jonas istražuje mutne dubine pećine.", datumObjave:'2017-12-01 04:04+0000'})
+CREATE (DS1E7:Epizoda {nazivEpizode:"Crossroads", opis:"Ulrih ispituje krhkog i uplašenog Helgea u staračkom domu. Jonas traži Mikela, ali stranac ga upozorava na mešanje u prošlost.", datumObjave:'2017-12-01 04:05+0000'})
+CREATE (DS1E8:Epizoda {nazivEpizode:"As you sow, so you shall reap", opis:"1953. godine unakažena tela dva dečaka ekshumirana su na gradilištu, budućem mestu Vindenove nuklearne elektrane.", datumObjave:'2017-12-01 04:06+0000'})
+CREATE (DS1E9:Epizoda {nazivEpizode:"Everything is now", opis:"Ulrich krši zakon, Helge pokušava da se izmakne Egonu Tiedemannu, Claudia iskorištava moći pećine, a Katarina se obrušava na Hannah.", datumObjave:'2017-12-01 04:07+0000'})
+CREATE (DS1E10:Epizoda {nazivEpizode:"Alpha and omega", opis:"Peter dobija udar. Jonas saznaje istinu o svojoj porodici, ali ima još iznenađenja koja tek slede. Helge se žrtvuje.", datumObjave:'2017-12-01 04:08+0000'})
+
+CREATE (DS2E1:Epizoda {nazivEpizode:"Beginnings and endings", opis:"Šest meseci nakon nestanka, policija formira radnu grupu. 2052. Jonas saznaje da je veći deo Vinden-a stradao u apokaliptičnom događaju.", datumObjave:'2019-06-21 04:00+0000'})
+CREATE (DS2E2:Epizoda {nazivEpizode:"Dark matter", opis:"Clausen i Charlotte intervjuiraju Reginu. Neznanac vodi Hannah u 1987. godinu, gde Claudia ima nervozan susret i Egon posećuje starog neprijatelja.", datumObjave:'2019-06-21 04:01+0000'})
+CREATE (DS2E3:Epizoda {nazivEpizode:"Ghosts", opis:"1954. godine nestali Helge se vraća, ali razgovaraće samo sa Noem. Klaudija 1987. dovodi vremensku mašinu u Tannhaus, a Egon ponovo ispituje Ulricha.", datumObjave:'2019-06-21 04:02+0000'})
+CREATE (DS2E4:Epizoda {nazivEpizode:"The travelers", opis:"Jonas upoznaje zloslutnu figuru. Dok deca češljaju pećinu tražeći odgovore, odrasli se okupljaju u bunkeru i dele ono što znaju o putnicima.", datumObjave:'2019-06-21 04:03+0000'})
+CREATE (DS2E5:Epizoda {nazivEpizode:"Lost and found", opis:"1987. Ulrih koristi priliku. Deca se u vremensku mašinu vraćaju u pećinu, a Jonas saznaje za rupu koja bi mogla promeniti budućnost.", datumObjave:'2019-06-21 04:04+0000'})
+CREATE (DS2E6:Epizoda {nazivEpizode:"An endless cycle", opis:"Naoružan planom za sprečavanje apokalipse, Jonas putuje do 2019. Tokom proslave godišnjice Nielsensa, Ulrich se iskrada sa Hannah.", datumObjave:'2019-06-21 04:05+0000'})
+CREATE (DS2E7:Epizoda {nazivEpizode:"The white devil", opis:"Marta upoznaje Neznanca i saznaje njegov pravi identitet. Klaudija pokušava da spreči Egonovu smrt 1987. Hannah putuje u 1954. da vidi Ulricha.", datumObjave:'2019-06-21 04:06+0000'})
+CREATE (DS2E8:Epizoda {nazivEpizode:"Endings and beginnings", opis:"Na dan apokalipse, Clausen izvršava nalog za pretres u elektrani dok Jonas i Claudia koriste vremensku mašinu za povezivanje prošlosti i budućnosti.", datumObjave:'2019-06-21 04:07+0000'})
+
+CREATE (DS3E1:Epizoda {nazivEpizode:"Deja-vu", opis:"2019. Jonas iz pećine izlazi u drugačiji, ali ne i nepoznati svet: grad Vinden koji se vrti od nedavnog nestanka mladog dečaka.", datumObjave:'2020-06-27 04:00+0000'})
+CREATE (DS3E2:Epizoda {nazivEpizode:"The survivors", opis:"Marta putuje u 1888. godinu da upozori svoje prijatelje na katastrofu 2020. godine. Stanovnici Vindena prošli i sada tragaju za nestalim voljenima.", datumObjave:'2020-06-27 04:01+0000'})
+CREATE (DS3E3:Epizoda {nazivEpizode:"Adam and Eva", opis:"Šarlota i Ulrih pokušavaju da slože šta se dogodilo u bunkeru. U različitim vremenima i svetovima Jonas i Martha rade na tome da steknu poverenje jedni drugih.", datumObjave:'2020-06-27 04:02+0000'})
+CREATE (DS3E4:Epizoda {nazivEpizode:"The origin", opis:"Jonas i Martha putuju u 2052 godinu i naziru mračnu budućnost. 1954. godine dvoje stanovnika Vindena nestaju, a Hannah dobija iznenađujuće vesti.", datumObjave:'2020-06-27 04:03+0000'})
+CREATE (DS3E5:Epizoda {nazivEpizode:"Life and death", opis:"2020. posetilac upućuje upozorenje Klaudiji. Dan pre apokalipse, Jonas počinje da preispituje Evine motive.", datumObjave:'2020-06-27 04:04+0000'})
+CREATE (DS3E6:Epizoda {nazivEpizode:"Light and shadow", opis:"Adam drži Martu u zatočeništvu 2020. Na dan apokalipse, sve mahnitija Marta moli Bartoša za pomoć.", datumObjave:'2020-06-27 04:05+0000'})
+CREATE (DS3E7:Epizoda {nazivEpizode:"Between the time", opis:"Tokom tri veka, stanovnici Vindena nastavljaju očajničku potragu da promene sudbinu i spasu svoje najmilije.", datumObjave:'2020-06-27 04:06+0000'})
+CREATE (DS3E8:Epizoda {nazivEpizode:"The paradise", opis:"Klaudija otkriva Adamu kako je sve povezano i kako može da uništi čvor.", datumObjave:'2020-06-27 04:07+0000'})
+CREATE
+  (LouisH)-[:ACTED_IN {uloga:['Jonas Kahnwald']}]->(Dark),
+  (KarolineE)-[:ACTED_IN {uloga:['Charlotte Doppler']}]->(Dark),
+  (LisaV)-[:ACTED_IN {uloga:['Martha Nielsen']}]->(Dark),
+  (MajaS)-[:ACTED_IN {uloga:['Hannah Kahnwald']}]->(Dark),
+  (StephanK)-[:ACTED_IN {uloga:['Peter Doppler']}]->(Dark),
+  (Baran)-[:DIRECTED]->(Dark),
+  (Dark)-[:SEASON]->(DS1),
+  (Dark)-[:SEASON]->(DS2),
+  (Dark)-[:SEASON]->(DS3),
+  (DS1)-[:EPISODE]->(DS1E1),
+  (DS1)-[:EPISODE]->(DS1E2),
+  (DS1)-[:EPISODE]->(DS1E3),
+  (DS1)-[:EPISODE]->(DS1E4),
+  (DS1)-[:EPISODE]->(DS1E5),
+  (DS1)-[:EPISODE]->(DS1E6),
+  (DS1)-[:EPISODE]->(DS1E7),
+  (DS1)-[:EPISODE]->(DS1E8),
+  (DS1)-[:EPISODE]->(DS1E9),
+  (DS1)-[:EPISODE]->(DS1E10),
+  (DS2)-[:EPISODE]->(DS2E1),
+  (DS2)-[:EPISODE]->(DS2E2),
+  (DS2)-[:EPISODE]->(DS2E3),
+  (DS2)-[:EPISODE]->(DS2E4),
+  (DS2)-[:EPISODE]->(DS2E5),
+  (DS2)-[:EPISODE]->(DS2E6),
+  (DS2)-[:EPISODE]->(DS2E7),
+  (DS2)-[:EPISODE]->(DS2E8),
+  (DS3)-[:EPISODE]->(DS3E1),
+  (DS3)-[:EPISODE]->(DS3E2),
+  (DS3)-[:EPISODE]->(DS3E3),
+  (DS3)-[:EPISODE]->(DS3E4),
+  (DS3)-[:EPISODE]->(DS3E5),
+  (DS3)-[:EPISODE]->(DS3E6),
+  (DS3)-[:EPISODE]->(DS3E7),
+  (DS3)-[:EPISODE]->(DS3E8)
+
+
+
+CREATE (ZeroZeroZero:Serija {nazivSerije:"ZeroZeroZero", opis:"Pošiljka kokaina kreće put Evrope, počev od trenutka kada moćni kartel italijanskih kriminalaca odluči da je kupi, do putovanja kroz Meksiko, do njegove pošiljke preko Atlantskog okeana.", zanr:'Krimi', pilot:'2020', jezik:'engleski', zavrsena:'true', zbirOcena:24, brOcena:4, avgOcena:6, slika:'images/zero.png', slikaP:'images/zeroP.jpg'})
+CREATE (AndreaR:Glumac {ime:'Andrea', prezime:'Riseborough', godinaRodjenja:1981})
+CREATE (DaneD:Glumac {ime:'Dane', prezime:'DeHaan', godinaRodjenja:1986})
+CREATE (HaroldT:Glumac {ime:'Harold', prezime:'Torres', godinaRodjenja:1978})
+CREATE (FrancescoC:Glumac {ime:'Francesco', prezime:'Colella', godinaRodjenja:1971})
+CREATE (DiegoC:Glumac {ime:'Diego', prezime:'Catano', godinaRodjenja:1990})
+CREATE (LeonardoF:Reziser {ime:'Leonardo', prezime:'Fasoli', godinaRodjenja:1967})
+CREATE (ZS1:Sezona {brojSezone:1, nazivSezone:'ZeroZeroZero: Season 1'})
+CREATE (ZE1:Epizoda {nazivEpizode:"The shipment", opis:"Italijanska mafija planira da kupi kokain, ali Donov sin poništava posao. Meksikanci sede da prodaju, ali ih specijalna policija napada. Američki brokeri su zasad uložili sopstveni novac da bi nagodba završila.", datumObjave:'2020-03-06 03:00+0000'})
+CREATE (ZE2:Epizoda {nazivEpizode:"Tampico skies", opis:"Linvood je umro u pucnjavi sa meksičkim oružanim snagama. Oružane snage sumnjaju na krticu. Jedan od članova je napravljen zamorčić. Krt napada brod drogom, ali okreće stola svom kapetanu i omogućava mu da pobegne.", datumObjave:'2020-03-06 03:01+0000'})
+CREATE (ZE3:Epizoda {nazivEpizode:"Miranda", opis:"Dok se Manuel i njegov tim suočavaju sa posledicama svojih izbora, Chris i Don Minu, suprotno svetu, moraju se suočiti sa nekim opasnim i neočekivanim okolnostima.", datumObjave:'2020-03-06 03:02+0000'})
+CREATE (ZE4:Epizoda {nazivEpizode:"Transshipment", opis:"Dok Linvoodovi osiguravaju da njihova pošiljka nastavi put do Gioia Taura, Manuel i njegov tim šire teror i smrt među narkoticima u Montereju.", datumObjave:'2020-03-06 03:03+0000'})
+CREATE (ZE5:Epizoda {nazivEpizode:"Sharia", opis:"Dok je Don Minuovo vođstvo podrivano izdajama i borbama za vlast, Linvoodovi se suočavaju sa opasnostima prelaska pustinje Malian.", datumObjave:'2020-03-06 03:04+0000'})
+CREATE (ZE6:Epizoda {nazivEpizode:"En el mismo camino", opis:"Dok su Chris i Emma prešli marokansku granicu, u Meksiku Manuel i njegovi ljudi grade vojsku u kršu u ime kartela Leira, stvarajući Manuelu probleme.", datumObjave:'2020-03-06 03:05+0000'})
+CREATE (ZE7:Epizoda {nazivEpizode:"Family", opis:"U Kalabriji, neprijatelji Don Minua shvataju da je jedini način da se definitivno destabilizuje šef 'Ndranghete zaustavljanje Linvooda i njihove pošiljke jednom zauvek.", datumObjave:'2020-03-06 03:06+0000'})
+CREATE (ZE8:Epizoda {nazivEpizode:"Same blood", opis:"Napokon se svi labavi krajevi vežu. Dok se Linvoodovi suočavaju sa posledicama svog posla, Don Minu i Manuel moraju da odluče koliko su spremni da plate da bi održali svoju moć, uprkos tome što su hiljadu milja udaljeni jedni od drugih.", datumObjave:'2020-03-06 03:07+0000'})
+CREATE
+  (AndreaR)-[:ACTED_IN {uloga:['Emma Lynwood']}]->(ZeroZeroZero),
+  (DaneD)-[:ACTED_IN {uloga:['Chris Lynwood']}]->(ZeroZeroZero),
+  (HaroldT)-[:ACTED_IN {uloga:['Manuel Contreras']}]->(ZeroZeroZero),
+  (FrancescoC)-[:ACTED_IN {uloga:['Italo Curtiga']}]->(ZeroZeroZero),
+  (DiegoC)-[:ACTED_IN {uloga:['Chino']}]->(ZeroZeroZero),
+  (LeonardoF)-[:DIRECTED]->(ZeroZeroZero),
+  (ZeroZeroZero)-[:SEASON]->(ZS1),
+  (ZS1)-[:EPISODE]->(ZE1),
+  (ZS1)-[:EPISODE]->(ZE2),
+  (ZS1)-[:EPISODE]->(ZE3),
+  (ZS1)-[:EPISODE]->(ZE4),
+  (ZS1)-[:EPISODE]->(ZE5),
+  (ZS1)-[:EPISODE]->(ZE6),
+  (ZS1)-[:EPISODE]->(ZE7),
+  (ZS1)-[:EPISODE]->(ZE8)
+
+
+
+CREATE (TheLastDance:Serija {nazivSerije:"The last dance", opis:"Opis uspona Chicago Bullsa iz 1990-ih, predvođenih Michael Jordan-om, jednom od najznačajnijih dinastija u istoriji sporta.", zanr:'Dokumentarna', jezik:'engleski', pilot:'2020', zavrsena:'true', zbirOcena:18, brOcena:3, avgOcena:6, slika:'images/lastdance.png', slikaP:'images/lastdanceP.jpg'})
+CREATE (PhilJ:Glumac {ime:'Phil', prezime:'Jackson', godinaRodjenja:1945})
+CREATE (MichaelJ:Glumac {ime:'Michael', prezime:'Jordan', godinaRodjenja:1963})
+CREATE (DavidA:Glumac {ime:'David', prezime:'Aldridge', godinaRodjenja:1968})
+CREATE (ScottieP:Glumac {ime:'Scottie', prezime:'Pippen', godinaRodjenja:1965})
+CREATE (SteveK:Glumac {ime:'Steve', prezime:'Kerr', godinaRodjenja:1965})
+CREATE (JasonH:Reziser {ime:'Jason', prezime:'Hehir', godinaRodjenja:1962})
+CREATE (LDS1:Sezona {brojSezone:1, nazivSezone:'The last dance: Season 1'})
+CREATE (LDE1:Epizoda {nazivEpizode:"Episode I", opis:"Flashbacks hronika koledža Majkla Jordana i ranih NBA dana. Bulls u predsezoni putuje u Pariz usred tenzija sa GM Jerri Krauseom.", datumObjave:'2020-04-19 03:00+0000'})
+CREATE (LDE2:Epizoda {nazivEpizode:"Episode II", opis:"Scottie Pippen ustaje iz neznanja i postaje jedan od najboljih NBA igrača. Povreda na početku Majklove karijere seje nepoverenje u menadžment Bullsa.", datumObjave:'2020-04-19 03:01+0000'})
+CREATE (LDE3:Epizoda {nazivEpizode:"Episode III", opis:"Stav i energija Dennisa Rodmana pomažu timu da pobedi, ali donosi dramu sa terena. Bikovi se bore da savladaju Klipove krajem 80-ih.", datumObjave:'2020-04-19 03:02+0000'})
+CREATE (LDE4:Epizoda {nazivEpizode:"Episode IV", opis:"Jedinstvena filozofija i ponašanje Phil Jackson-a podižu Bikove na viši nivo. Ekipa konačno prolazi Detroit i zarađuje šut za NBA titulu.", datumObjave:'2020-04-19 03:03+0000'})
+CREATE (LDE5:Epizoda {nazivEpizode:"Episode V", opis:"Od Air Jordana i Budi kao Mike do NBA finala '92 i Olimpijskog tima snova, Majkl postaje globalna kulturna ikona za razliku od bilo koje druge.", datumObjave:'2020-04-19 03:04+0000'})
+CREATE (LDE6:Epizoda {nazivEpizode:"Episode VI", opis:"Otkrivajuća knjiga i pregled njegovog kockanja uneli su štetu u Michaelovu reputaciju, ali on je i dalje fokusiran na osvajanje treće titule zaredom 1993. godine.", datumObjave:'2020-04-19 03:05+0000'})
+CREATE (LDE7:Epizoda {nazivEpizode:"Episode VII", opis:"Slomljen smrću oca, mentalno iscrpljeni Michael povukao se 1993. godine - da bi igrao bejzbol. Bikovi nastavljaju sa Scottiejem u glavnoj ulozi.", datumObjave:'2020-04-19 03:06+0000'})
+CREATE (LDE8:Epizoda {nazivEpizode:"Episode VIII", opis:"Majklov povratak daje energiju Bullsima, gradu i NBA ligi, ali gubitak u plej-ofu 1995. godine podstiče ga da radi više nego ikad da se vrati na vrh.", datumObjave:'2020-04-19 03:07+0000'})
+CREATE (LDE9:Epizoda {nazivEpizode:"Episode IX", opis:"Bikovi se suočavaju sa teškim izazovima u svojoj vladavini 1997. godine protiv Jute i 1998. protiv Indijane. Igrač uloga Steve Kerr ostavlja trag na dinastiji.", datumObjave:'2020-04-19 03:08+0000'})
+CREATE (LDE10:Epizoda {nazivEpizode:"Episode X", opis:"Pohabani i iscrpljeni, Bikovi zaključuju svoj „Poslednji ples“ šestim prvenstvom. Michael, Phil i drugi razmišljaju o kraju dinastije.", datumObjave:'2020-04-19 03:09+0000'})
+CREATE
+  (PhilJ)-[:ACTED_IN {uloga:['Self']}]->(TheLastDance),
+  (MichaelJ)-[:ACTED_IN {uloga:['Self']}]->(TheLastDance),
+  (DavidA)-[:ACTED_IN {uloga:['Self']}]->(TheLastDance),
+  (ScottieP)-[:ACTED_IN {uloga:['Self']}]->(TheLastDance),
+  (SteveK)-[:ACTED_IN {uloga:['Self']}]->(TheLastDance),
+  (JasonH)-[:DIRECTED]->(TheLastDance),
+  (TheLastDance)-[:SEASON]->(LDS1),
+  (LDS1)-[:EPISODE]->(LDE1),
+  (LDS1)-[:EPISODE]->(LDE2),
+  (LDS1)-[:EPISODE]->(LDE3),
+  (LDS1)-[:EPISODE]->(LDE4),
+  (LDS1)-[:EPISODE]->(LDE5),
+  (LDS1)-[:EPISODE]->(LDE6),
+  (LDS1)-[:EPISODE]->(LDE7),
+  (LDS1)-[:EPISODE]->(LDE8),
+  (LDS1)-[:EPISODE]->(LDE9),
+  (LDS1)-[:EPISODE]->(LDE10)
+
+
+
+CREATE (BlackMirror:Serija {nazivSerije:"Black mirror", opis:"Antologijska serija koja istražuje uvrnuti, visokotehnološki multiverzum gde se sudaraju najveće inovacije čovečanstva i najmračniji instikti.", zanr:'Drama', pilot:'2011', jezik:'engleski', zavrsena:'false', zbirOcena:12, brOcena:2, avgOcena:6, slika:'images/blackmirror.png', slikaP:'images/blackmirrorP.png'})
+CREATE (DanielL:Glumac {ime:'Daniel', prezime:'Lapaine', godinaRodjenja:1971})
+CREATE (HannahJK:Glumac {ime:'Hannah', prezime:'John-Kamen', godinaRodjenja:1989})
+CREATE (MichaelC:Glumac {ime:'Michael', prezime:'Coel', godinaRodjenja:1987})
+CREATE (CharlieB:Reziser {ime:'Charlie', prezime:'Brooker', godinaRodjenja:1962})
+CREATE (BMS1:Sezona {brojSezone:1, nazivSezone:'Black mirror: Season 1'})
+CREATE (BMS2:Sezona {brojSezone:2, nazivSezone:'Black mirror: Season 2'})
+CREATE (BMS3:Sezona {brojSezone:3, nazivSezone:'Black mirror: Season 3'})
+CREATE (BMS4:Sezona {brojSezone:4, nazivSezone:'Black mirror: Season 4'})
+CREATE (BMS5:Sezona {brojSezone:5, nazivSezone:'Black mirror: Season 5'})
+CREATE (BMS1E1:Epizoda {nazivEpizode:"The national anthem", opis:"Premijer Michael Callov suočava se sa šokantnom dilemom kada je kidnapovana princeza Suzana, voljeni član Kraljevske porodice.", datumObjave:'2011-12-04 03:00+0000'})
+CREATE (BMS1E2:Epizoda {nazivEpizode:"Fifteen milion merits", opis:"U svetu u kojem se život ljudi sastoji od vožnje bicikala za vežbanje kako bi se stekli krediti, Bing pokušava da pomogne ženi da uđe u emisiju takmičenja u pevanju.", datumObjave:'2011-12-04 03:01+0000'})
+CREATE (BMS1E3:Epizoda {nazivEpizode:"The entire history of you", opis:"U bliskoj budućnosti svako ima pristup memorijskom implantatu koji beleži sve što radi, vidi i čuje. Nikada više ne trebate zaboraviti lice - ali da li je to uvek dobra stvar?", datumObjave:'2011-12-04 03:02+0000'})
+
+CREATE (BMS2E1:Epizoda {nazivEpizode:"Be right back", opis:"Nakon što je saznala za novu uslugu koja omogućava ljudima da ostanu u kontaktu sa pokojnikom, usamljena, ožalošćena Marta ponovo se poveže sa svojim pokojnim ljubavnikom.", datumObjave:'2013-02-11 03:00+0000'})
+CREATE (BMS2E2:Epizoda {nazivEpizode:"White bear", opis:"Victoria se probudi i ne može se setiti ničega iz svog života. Svi sa kojima se sretne odbijaju da komuniciraju sa njom i čini se da svi znaju nešto što ona ne zna. Ali šta?", datumObjave:'2013-02-11 03:01+0000'})
+CREATE (BMS2E3:Epizoda {nazivEpizode:"The waldo moment", opis:"Neuspeli komičar koji izrazi glas popularnog crtanog medveda Valdo nađe se mešajući u politici kada TV rukovodioci žele da se Valdo kandiduje za to mesto.", datumObjave:'2013-02-11 03:02+0000'})
+CREATE (BMS2E4:Epizoda {nazivEpizode:"White christmas", opis:"Tri međusobno povezane tehnološke priče tokom božićne sezone ispričala su dva muškarca na udaljenoj stražarskoj stanici u zaleđenoj divljini.", datumObjave:'2013-02-11 03:03+0000'})
+
+CREATE (BMS3E1:Epizoda {nazivEpizode:"Nosedive", opis:"Žena koja očajnički želi da poveća rezultat na društvenim mrežama postiže dobitak kada je pozvana na otmeno venčanje, ali putovanje ne ide kako je planirano.", datumObjave:'2016-10-21 03:00+0000'})
+CREATE (BMS3E2:Epizoda {nazivEpizode:"Playtest", opis:"Američki putnik nema novca za gotovinu kako bi testirao revolucionarni novi sistem igara, ali ubrzo ne može da kaže gde se završava vruća igra i počinje stvarnost.", datumObjave:'2016-10-21 03:01+0000'})
+CREATE (BMS3E3:Epizoda {nazivEpizode:"Shut up and dance", opis:"Kad se povuče, Kenni strmoglavo naleti na mrežnu zamku, brzo je primoran na nelagodan savez sa pomičnim Hektorom, obojica na milost i nemilost nepoznatih osoba.", datumObjave:'2016-10-21 03:02+0000'})
+CREATE (BMS3E4:Epizoda {nazivEpizode:"San Junipero", opis:"Kada Iorkie i Kelli posete San Junipero, zabavni grad na plaži prepun surfa, sunca i seksa, život im se menja.", datumObjave:'2016-10-21 03:03+0000'})
+CREATE (BMS3E5:Epizoda {nazivEpizode:"Men against fire", opis:"Budući vojnici Stripe i Raiman moraju zaštititi uplašene seljane od najezde opakih divljih mutanata.", datumObjave:'2016-10-21 03:04+0000'})
+CREATE (BMS3E6:Epizoda {nazivEpizode:"Hated in the Nation", opis:"U bliskoj budućnosti Londona, policijska detektivka Karin Parke i njen tehnološki pametni pomoćnik Blue istražuju niz misterioznih smrtnih slučajeva zlokobnom vezom do društvenih medija.", datumObjave:'2016-10-21 03:05+0000'})
+
+CREATE (BMS4E1:Epizoda {nazivEpizode:"USS Callister", opis:"Kapetan Robert Dali predsedava njegovom posadom mudro i hrabro. Ali novi regrut uskoro neće otkriti ništa na ovom svemirskom brodu onako kako se čini.", datumObjave:'2017-12-29 03:00+0000'})
+CREATE (BMS4E2:Epizoda {nazivEpizode:"Arkangel", opis:"Nakon što je umalo izgubila ćerku, majka ulaže u novu tehnologiju koja joj omogućava da je prati.", datumObjave:'2017-12-29 03:01+0000'})
+CREATE (BMS4E3:Epizoda {nazivEpizode:"Crocodile", opis:"Agent osiguranja istražuje manji saobraćajni incident koristeći uređaj koji manifestuje sećanja ljudi, ali jedan od njenih svedoka ima šta da sakrije.", datumObjave:'2017-12-29 03:02+0000'})
+CREATE (BMS4E4:Epizoda {nazivEpizode:"Hang the DJ", opis:"Paired up by a dating program that puts an expiration date on all relationships, Frank and Amy soon begin to question the system's logic.", datumObjave:'2017-12-29 03:03+0000'})
+CREATE (BMS4E5:Epizoda {nazivEpizode:"Metalhead", opis:"U postapokaliptičnom pejzažu škotskih Mavara, žena pokušava da preživi zemlju punu „pasa“.", datumObjave:'2017-12-29 03:04+0000'})
+CREATE (BMS4E6:Epizoda {nazivEpizode:"Black museum", opis:"Žena ulazi u Crni muzej, gde vlasnik priča svoje priče koje se odnose na artefakte.", datumObjave:'2017-12-29 03:05+0000'})
+
+CREATE (BMS5E1:Epizoda {nazivEpizode:"Striking vipers", opis:"Dvoje otuđenih prijatelja sa fakulteta ponovo se okupljaju u kasnijem životu, pokrećući niz događaja koji bi im mogli zauvek promeniti život.", datumObjave:'2019-06-05 03:00+0000'})
+CREATE (BMS5E2:Epizoda {nazivEpizode:"Smithereens", opis:"A cab driver with an agenda becomes the centre of attention on a day that rapidly spirals out of control.", datumObjave:'2019-06-05 03:01+0000'})
+CREATE (BMS5E3:Epizoda {nazivEpizode:"Rachel, Jack and Ashley Too", opis:"Usamljena tinejdžerka žudi da se poveže sa svojom omiljenom pop zvezdom - čije šarmantno postojanje nije baš toliko ružičasto kako se čini ...", datumObjave:'2019-06-05 03:02+0000'})
+CREATE
+  (DanielL)-[:ACTED_IN {uloga:['Dawson']}]->(BlackMirror),
+  (HannahJK)-[:ACTED_IN {uloga:['Selma Telse']}]->(BlackMirror),
+  (MichaelC)-[:ACTED_IN {uloga:['Airport Stewardess']}]->(BlackMirror),
+  (CharlieB)-[:DIRECTED]->(BlackMirror),
+  (BlackMirror)-[:SEASON]->(BMS1),
+  (BlackMirror)-[:SEASON]->(BMS2),
+  (BlackMirror)-[:SEASON]->(BMS3),
+  (BlackMirror)-[:SEASON]->(BMS4),
+  (BlackMirror)-[:SEASON]->(BMS5),
+  (BMS1)-[:EPISODE]->(BMS1E1),
+  (BMS1)-[:EPISODE]->(BMS1E2),
+  (BMS1)-[:EPISODE]->(BMS1E3),
+  (BMS2)-[:EPISODE]->(BMS2E1),
+  (BMS2)-[:EPISODE]->(BMS2E2),
+  (BMS2)-[:EPISODE]->(BMS2E3),
+  (BMS2)-[:EPISODE]->(BMS2E4),
+  (BMS3)-[:EPISODE]->(BMS3E1),
+  (BMS3)-[:EPISODE]->(BMS3E2),
+  (BMS3)-[:EPISODE]->(BMS3E3),
+  (BMS3)-[:EPISODE]->(BMS3E4),
+  (BMS3)-[:EPISODE]->(BMS3E5),
+  (BMS3)-[:EPISODE]->(BMS3E6),
+  (BMS4)-[:EPISODE]->(BMS4E1),
+  (BMS4)-[:EPISODE]->(BMS4E2),
+  (BMS4)-[:EPISODE]->(BMS4E3),
+  (BMS4)-[:EPISODE]->(BMS4E4),
+  (BMS4)-[:EPISODE]->(BMS4E5),
+  (BMS4)-[:EPISODE]->(BMS4E6),
+  (BMS5)-[:EPISODE]->(BMS5E1),
+  (BMS5)-[:EPISODE]->(BMS5E2),
+  (BMS5)-[:EPISODE]->(BMS5E3)
+
+
+
+CREATE (TheWitcher:Serija {nazivSerije:"The Witcher", opis:"Geralt od Rivije, usamljeni lovac na čudovišta, bori se da pronađe svoje mesto u svetu u kojem se ljudi često pokažu opakiji od zveri.", zanr:'Drama', pilot:'2019', jezik:'engleski', zavrsena:'false', zbirOcena:36, brOcena:5, avgOcena:7.2, slika:'images/witcher.png', slikaP:'images/witcherP.jpg'})
+CREATE (HenryC:Glumac {ime:'Henry', prezime:'Cavill', godinaRodjenja:1983})
+CREATE (FreyaA:Glumac {ime:'Freya', prezime:'Allan', godinaRodjenja:2001})
+CREATE (Yasen:Glumac {ime:'Yasen', prezime:'Atour', godinaRodjenja:1988})
+CREATE (Basil:Glumac {ime:'Basil', prezime:'Eidenbenz', godinaRodjenja:1993})
+CREATE (LaurenS:Reziser {ime:'Lauren', prezime:'Schmidt', godinaRodjenja:1972})
+CREATE (WS1:Sezona {brojSezone:1, nazivSezone:'The Witcher: Season 1'})
+CREATE (WS1E1:Epizoda {nazivEpizode:"The ends beginning", opis:"Neprijateljsko stanovništvo i lukav mag pozdravljaju Geralta u gradu Blaviken. Ciri otkriva da je njen kraljevski svet otvoren kada Nilfgaard nanišani Cintru.", datumObjave:'2019-12-20 03:00+0000'})
+CREATE (WS1E2:Epizoda {nazivEpizode:"Four marks", opis:"Nasiljena i zanemarena, Iennefer slučajno pronalazi sredstvo za beg. Geraltov lov na takozvanog đavola odlazi u pakao. Ciri sigurnost traži u brojevima.", datumObjave:'2019-12-20 03:01+0000'})
+CREATE (WS1E3:Epizoda {nazivEpizode:"Betrayer Moon", opis:"Geralt preuzima još jedan Vitcher-ov nedovršeni posao u kraljevstvu koje je proganjala divlja zver. Po brutalnoj ceni, Iennefer kuje magičnu novu budućnost.", datumObjave:'2019-12-20 03:02+0000'})
+CREATE (WS1E4:Epizoda {nazivEpizode:"Of banquets, bastards and burials", opis:"Protiv njegove bolje prosudbe, Geralt prati Jaskiera na kraljevski bal. Ciri zaluta u začaranu šumu. Jennefer pokušava da zaštiti svoje optužbe.", datumObjave:'2019-12-20 03:03+0000'})
+CREATE (WS1E5:Epizoda {nazivEpizode:"Bottled Appetites", opis:"Ne obazirući se na upozorenja, Jennefer traži lek da povrati izgubljeno. Geralt nehotice dovodi Jaskiera u opasnost. Potraga za Ciri se pojačava.", datumObjave:'2019-12-20 03:04+0000'})
+CREATE (WS1E6:Epizoda {nazivEpizode:"Rare species", opis:"Tajanstveni čovek pokušava da privoli Geralta da se pridruži lovu na besnog zmaja, potragu koja privlači poznato lice. Ciri postavlja pitanje kome može da veruje.", datumObjave:'2019-12-20 03:05+0000'})
+CREATE (WS1E7:Epizoda {nazivEpizode:"Before a fall", opis:"Dok je kontinent u opasnosti od Nilfgaardove rastuće moći, Iennefer preispituje svoju prošlost, dok Geralt preispituje svoju obavezu prema Zakonu iznenađenja.", datumObjave:'2019-12-20 03:06+0000'})
+CREATE (WS1E8:Epizoda {nazivEpizode:"Much more", opis:"Zastrašujući čopor neprijatelja polaže Geralta. Jennefer i njeni kolege magovi pripremaju se za uzvrat. Uzdrmana Ciri zavisi od dobrote stranca.", datumObjave:'2019-12-20 03:07+0000'})
+CREATE
+  (HenryC)-[:ACTED_IN {uloga:['Geralt of Rivia']}]->(TheWitcher),
+  (FreyaA)-[:ACTED_IN {uloga:['Ciri']}]->(TheWitcher),
+  (Yasen)-[:ACTED_IN {uloga:['Coen']}]->(TheWitcher),
+  (Basil)-[:ACTED_IN {uloga:['Eskel']}]->(TheWitcher),
+  (LaurenS)-[:DIRECTED]->(TheWitcher),
+  (TheWitcher)-[:SEASON]->(WS1),
+  (WS1)-[:EPISODE]->(WS1E1),
+  (WS1)-[:EPISODE]->(WS1E2),
+  (WS1)-[:EPISODE]->(WS1E3),
+  (WS1)-[:EPISODE]->(WS1E4),
+  (WS1)-[:EPISODE]->(WS1E5),
+  (WS1)-[:EPISODE]->(WS1E6),
+  (WS1)-[:EPISODE]->(WS1E7),
+  (WS1)-[:EPISODE]->(WS1E8)
+
+CREATE (TheMatrix:Film {nazivFilma:"The Matrix", opis:"Matriks je akcioni film iz 1999. Film predstavlja distopijsku budućnost gde realnost kako je doživljava većina ljudi jeste simulirana stvarnost, koja se zove Matriks.", zanr:'Akcija', jezik:'engleski', vremeTrajanja:136, godina:1999, zbirOcena:12, brOcena:2, avgOcena:6, slika:'images/matriks.jpg', slikaP:'images/matriksP.jpg'})
+CREATE (Keanu:Glumac {ime:'Keanu', prezime:'Reeves', godinaRodjenja:1964})
+CREATE (Carrie:Glumac {ime:'Carrie-Anne', prezime:'Moss', godinaRodjenja:1967})
+CREATE (Laurence:Glumac {ime:'Laurence', prezime:'Fishburne', godinaRodjenja:1961})
+CREATE (Hugo:Glumac {ime:'Hugo', prezime:'Weaving', godinaRodjenja:1960})
+CREATE (LillyW:Reziser {ime:'Lilly', prezime:'Wachowski', godinaRodjenja:1967})
+CREATE
+  (Keanu)-[:ACTED_IN {uloga:['Neo']}]->(TheMatrix),
+  (Carrie)-[:ACTED_IN {uloga:['Trinity']}]->(TheMatrix),
+  (Laurence)-[:ACTED_IN {uloga:['Morpheus']}]->(TheMatrix),
+  (Hugo)-[:ACTED_IN {uloga:['Agent Smith']}]->(TheMatrix),
+  (LillyW)-[:DIRECTED]->(TheMatrix)
+
+
+CREATE (TheDevilsAdvocate:Film {nazivFilma:"The Devil's Advocate", opis:"Kevin Lomaks je mladi i ambiciozni advokat, koji sa svojom lepom ženom Meri En živi na Floridi. Sa uvek prisutnom dozom egocentričnosti, Kevin nikada ne priznaje da sudski slučaj može biti nerešiv. Upravo zahvaljujući ovoj njegovoj osobini, on će napraviti veliki korak napred. ", zanr:'Triler', jezik:'engleski', vremeTrajanja:146, godina:1997, zbirOcena:7, brOcena:1, avgOcena:7, slika:'images/advocate.jpg', slikaP:'images/advocateP.jpg'})
+CREATE (Charlize:Glumac {ime:'Charlize', prezime:'Theron', godinaRodjenja:1975})
+CREATE (Al:Glumac {ime:'Al', prezime:'Pacino', godinaRodjenja:1940})
+CREATE (Taylor:Reziser {ime:'Taylor', prezime:'Hackford', godinaRodjenja:1944})
+CREATE
+  (Keanu)-[:ACTED_IN {uloga:['Kevin Lomax']}]->(TheDevilsAdvocate),
+  (Charlize)-[:ACTED_IN {uloga:['Mary Ann Lomax']}]->(TheDevilsAdvocate),
+  (Al)-[:ACTED_IN {uloga:['John Milton']}]->(TheDevilsAdvocate),
+  (Taylor)-[:DIRECTED]->(TheDevilsAdvocate)
+
+
+CREATE (TopGun:Film {nazivFilma:"Top Gun", opis:"Studenti elitne akademije za pilote Američke mornarice bore se da budu najbolji u generaciji, a jedan mladi pilot (Tom Cruise) od civilne instruktorice (Kelly McGillis) uči i neke stvari koje se ne podučavaju u predavaonicama.", zanr:'Akcija', jezik:'engleski', vremeTrajanja:110,  godina:1986, zbirOcena:19, brOcena:3, avgOcena:6.33, slika:'images/topgun.jpg', slikaP:'images/topgunP.jpg'})
+CREATE (TomC:Glumac {ime:'Tom', prezime:'Cruise', godinaRodjenja:1971})
+CREATE (KellyM:Glumac {ime:'Kelly McGillis', godinaRodjenja:1957})
+CREATE (ValK:Glumac {ime:'Val', prezime:'Kilmer', godinaRodjenja:1959})
+CREATE (AnthonyE:Glumac {ime:'Anthony', prezime:'Edwards', godinaRodjenja:1962})
+CREATE (TomS:Glumac {ime:'Tom', prezime:'Skerritt', godinaRodjenja:1933})
+CREATE (MegR:Glumac {ime:'Meg', prezime:'Ryan', godinaRodjenja:1961})
+CREATE (TonyS:Reziser {ime:'Tony', prezime:'Scott', godinaRodjenja:1944})
+CREATE
+  (TomC)-[:ACTED_IN {uloga:['Maverick']}]->(TopGun),
+  (KellyM)-[:ACTED_IN {uloga:['Charlie']}]->(TopGun),
+  (ValK)-[:ACTED_IN {uloga:['Iceman']}]->(TopGun),
+  (AnthonyE)-[:ACTED_IN {uloga:['Goose']}]->(TopGun),
+  (TomS)-[:ACTED_IN {uloga:['Viper']}]->(TopGun),
+  (MegR)-[:ACTED_IN {uloga:['Carole']}]->(TopGun),
+  (TonyS)-[:DIRECTED]->(TopGun)
+
+
+CREATE (TheDaVinciCode:Film {nazivFilma:'The Da Vinci Code', opis:"The Da Vinci Code je američki igrani film snimljen 2006. u režiji Rona Howarda. Radnja se temelji na istoimenom romanu Dana Browna. Protagonist, čiji lik tumači Tom Hanks, je Robert Langdon, harvardski profesor koji postaje osumnjičen za ubistvo u pariškom Louvreu te, nastojeći dokazati svoju nedužnost, razotkriva zaveru unutar katoličke organizacije Opus Dei, odnosno viševjekovno nastojanje da se sakrije prava istina o sudbini Isusa.", zanr:'Misterija', jezik:'engleski,francuski', vremeTrajanja:174, godina:2006, zbirOcena:13, brOcena:2, avgOcena:6.5, slika:'images/davinci.jpg', slikaP:'images/davinciP.jpg'})
+CREATE (IanM:Glumac {ime:'Ian', prezime:'McKellen', godinaRodjenja:1939})
+CREATE (AudreyT:Glumac {ime:'Audrey', prezime:'Tautou', godinaRodjenja:1976})
+CREATE (PaulB:Glumac {ime:'Paul', prezime:'Bettany', godinaRodjenja:1971})
+CREATE (RonH:Reziser {ime:'Ron', prezime:'Howard', godinaRodjenja:1954})
+CREATE
+  (TomH)-[:ACTED_IN {uloga:['Dr. Robert Langdon']}]->(TheDaVinciCode),
+  (IanM)-[:ACTED_IN {uloga:['Sir Leight Teabing']}]->(TheDaVinciCode),
+  (AudreyT)-[:ACTED_IN {uloga:['Sophie Neveu']}]->(TheDaVinciCode),
+  (PaulB)-[:ACTED_IN {uloga:['Silas']}]->(TheDaVinciCode),
+  (RonH)-[:DIRECTED]->(TheDaVinciCode)
+
+CREATE (VforVendetta:Film {nazivFilma:'V for Vendetta', opis:"U futurističkim predelima totalitarne Britanije, 'V kao Vendeta' priča priču o mladoj ženi iz radničke klase po imenu Evi, koju iz po život opasne situacije spasava maskirani čovek poznat samo kao 'V.'", zanr:'Akcija', jezik:'engleski', vremeTrajanja:132, godina:2006, zbirOcena:15, brOcena:2, avgOcena:7.5, slika:'images/vendeta.jpg', slikaP:'images/vendetaP.jpg'})
+CREATE (NatalieP:Glumac {ime:'Natalie', prezime:'Portman', godinaRodjenja:1981})
+CREATE (StephenR:Glumac {ime:'Stephen', prezime:'Rea', godinaRodjenja:1946})
+CREATE (JohnH:Glumac {ime:'John', prezime:'Hurt', godinaRodjenja:1940})
+CREATE (BenM:Glumac {ime: 'Ben', prezime:'Miles', godinaRodjenja:1967})
+CREATE (JamesM:Reziser {ime:'James', prezime:'Marshall', godinaRodjenja:1967})
+CREATE
+  (Hugo)-[:ACTED_IN {uloga:['V']}]->(VforVendetta),
+  (NatalieP)-[:ACTED_IN {uloga:['Evey Hammond']}]->(VforVendetta),
+  (StephenR)-[:ACTED_IN {uloga:['Eric Finch']}]->(VforVendetta),
+  (JohnH)-[:ACTED_IN {uloga:['High Chancellor Adam Sutler']}]->(VforVendetta),
+  (BenM)-[:ACTED_IN {uloga:['Dascomb']}]->(VforVendetta),
+  (JamesM)-[:DIRECTED]->(VforVendetta)	
+  
+
+CREATE (SpeedRacer:Film {nazivFilma:'Speed Racer', opis:"Neustrašivo jureći niz stazu, zaobilazeći u svom gromoglasnom Mahu 5 suparnike sa strane, odozgo i prolazeći između njih, Trkač (Emil Hirš) je rođen da vozi trkačka kola. Ali kada odbije unosnu ponudu Rojalton Indastriza, ne samo da time razbesni manijačkog vlasnika kompanije (Rodžer Alam), već i otkriva strašnu tajnu – neke od najvećih trka namešta grupica nemilosrdnih mogula.", zanr:'Avantura', jezik:'engleski', vremeTrajanja:135, godina:2008, zbirOcena:14, brOcena:2, avgOcena:7, slika:'images/speedracer.jpg', slikaP:'images/speedracerP.jpg'})
+CREATE (EmileH:Glumac {ime:'Emile', prezime:'Hirsch', godinaRodjenja:1985})
+CREATE (JohnG:Glumac {ime:'John', prezime:'Goodman', godinaRodjenja:1960})
+CREATE (SusanS:Glumac {ime:'Susan', prezime:'Sarandon', godinaRodjenja:1946})
+CREATE (MatthewF:Glumac {ime:'Matthew', prezime:'Fox', godinaRodjenja:1966})
+CREATE (ChristinaR:Glumac {ime:'Christina', prezime:'Ricci', godinaRodjenja:1980})
+CREATE (Rain:Glumac {ime:'Rain', prezime:'Gonzales', godinaRodjenja:1982})
+CREATE
+  (EmileH)-[:ACTED_IN {uloga:['Speed Racer']}]->(SpeedRacer),
+  (JohnG)-[:ACTED_IN {uloga:['Pops']}]->(SpeedRacer),
+  (SusanS)-[:ACTED_IN {uloga:['Mom']}]->(SpeedRacer),
+  (MatthewF)-[:ACTED_IN {uloga:['Racer X']}]->(SpeedRacer),
+  (ChristinaR)-[:ACTED_IN {uloga:['Trixie']}]->(SpeedRacer),
+  (Rain)-[:ACTED_IN {uloga:['Taejo Togokahn']}]->(SpeedRacer),
+  (BenM)-[:ACTED_IN {uloga:['Cass Jones']}]->(SpeedRacer),
+  (LillyW)-[:DIRECTED]->(SpeedRacer)
+
+
+CREATE (Uros:Korisnik {ime:'Uros', prezime:'Milosevic', email:"uros.milosevic@gmail.com", sifra:'uros123', tip:0})
+CREATE (Marko:Korisnik {ime:'Marko', prezime:'Mitrovic', email:"marko.mitrovic@gmail.com", sifra:'marko123', tip:0})
+CREATE (Nikola:Korisnik {ime:'Nikola', prezime:'Petrovic', email:"nikola.petrovic@gmail.com", sifra:'nikola123', tip:0})
+CREATE (Petar:Korisnik {ime:'Petar', prezime:'Mihajlovic', email:"petar.mihajlovic@gmail.com", sifra:'petar123', tip:0})
+CREATE (David:Korisnik {ime:'David', prezime:'Markovic', email:"david.markovic@gmail.com", sifra:'david123', tip:0})
+CREATE (Ana:Korisnik {ime:'Ana', prezime:'Petkovic', email:"ana.petkovic@gmail.com", sifra:'ana123', tip:0})
+CREATE (Vladan:Korisnik {ime:'Vladan', prezime:'Mirkovic', email:"vladan.mirkovic@gmail.com", sifra:'vladan123', tip:0})
+CREATE (Milos:Korisnik {ime:'Milos', prezime:'Mitic', email:"milos.mitic@gmail.com", sifra:'milos123', tip:0})
+CREATE (Stefan:Korisnik {ime:'Stefan', prezime:'Micic', email:"stefan.micic@gmail.com", sifra:'stefan123', tip:0})
+CREATE (Mihajlo:Korisnik {ime:'Mihajlo', prezime:'Savic', email:"mihajlo.savic@gmail.com", sifra:'mihajlo123', tip:0})
+CREATE (Nina:Korisnik {ime:'Nina', prezime:'Ilic', email:"nina.ilic@gmail.com", sifra:'nina123', tip:0})
+CREATE (Petra:Korisnik {ime:'Petra', prezime:'Nikolic', email:"petra.nikolic@gmail.com", sifra:'petra123', tip:0})
+CREATE
+  (Uros)-[:RECENZIJA {ocena:10, komentar:'Odlicna serija, preporucujem svima.'}]->(BandofBrothers),
+  (Marko)-[:RECENZIJA {ocena:9, komentar:'Nije losa, odgledajte.'}]->(BandofBrothers),
+  (Nikola)-[:RECENZIJA {ocena:5, komentar:'Prosecna serija.'}]->(BandofBrothers),
+  (Petar)-[:RECENZIJA {ocena:8, komentar:'Nista posebno..'}]->(Chernobyl),
+  (David)-[:RECENZIJA {ocena:9, komentar:'Svidja mi se, malo fali za 10.'}]->(Chernobyl),
+  (Ana)-[:RECENZIJA {ocena:7, komentar:'Onako..'}]->(Chernobyl),
+  (Vladan)-[:RECENZIJA {ocena:6, komentar:'Nista specijalno..'}]->(ZeroZeroZero),
+  (Milos)-[:RECENZIJA {ocena:9, komentar:'Par sitnica mi se nije dopalo.'}]->(ZeroZeroZero),
+  (Stefan)-[:RECENZIJA {ocena:5, komentar:'Kakva serija, takva ocena..'}]->(ZeroZeroZero),
+  (Mihajlo)-[:RECENZIJA {ocena:4, komentar:'Razocaran sam..'}]->(ZeroZeroZero),
+  (Nina)-[:RECENZIJA {ocena:7, komentar:'Nije losa, odgledajte.'}]->(TheLastDance),
+  (Petra)-[:RECENZIJA {ocena:5, komentar:'Prosecna serija.'}]->(TheLastDance),
+  (Uros)-[:RECENZIJA {ocena:6, komentar:'Nista posebno, standard..'}]->(TheLastDance),
+  (Marko)-[:RECENZIJA {ocena:8, komentar:'Nije losa, odgledajte.'}]->(TheWitcher),
+  (Nikola)-[:RECENZIJA {ocena:5, komentar:'Prosecna serija.'}]->(TheWitcher),
+  (Petar)-[:RECENZIJA {ocena:10, komentar:'Odlicna serija, preporucujem svima!!'}]->(TheWitcher),
+  (David)-[:RECENZIJA {ocena:9, komentar:'Nije losa, odgledajte.'}]->(TheWitcher),
+  (Ana)-[:RECENZIJA {ocena:4, komentar:'Ispod proseka..'}]->(TheWitcher),
+  (Vladan)-[:RECENZIJA {ocena:6, komentar:'Malo bolje od prosecnih, klasika..'}]->(Dark),
+  (Milos)-[:RECENZIJA {ocena:8, komentar:'Nije losa, odgledajte.'}]->(Dark),
+  (Stefan)-[:RECENZIJA {ocena:5, komentar:'Prosek..'}]->(Dark),
+  (Mihajlo)-[:RECENZIJA {ocena:7, komentar:'Onako, moze da prodje'}]->(Dark),
+  (Nina)-[:RECENZIJA {ocena:9, komentar:'Nije losa, odgledajte.'}]->(BlackMirror),
+  (Petra)-[:RECENZIJA {ocena:3, komentar:'Ocena samo zbog glumaca.'}]->(BlackMirror),
+  (Uros)-[:RECENZIJA {ocena:6, komentar:'Nista posebno, standard..'}]->(SpeedRacer),
+  (Marko)-[:RECENZIJA {ocena:8, komentar:'Nije los, odgledajte.'}]->(SpeedRacer),
+  (Nikola)-[:RECENZIJA {ocena:5, komentar:'Prosecan film.'}]->(VforVendetta),
+  (Petar)-[:RECENZIJA {ocena:10, komentar:'Odlican film, preporucujem svima!!'}]->(VforVendetta),
+  (David)-[:RECENZIJA {ocena:9, komentar:'Nije los, odgledajte.'}]->(TheDaVinciCode),
+  (Ana)-[:RECENZIJA {ocena:4, komentar:'Ispod proseka..'}]->(TheDaVinciCode),
+  (Vladan)-[:RECENZIJA {ocena:6, komentar:'Malo bolje od prosecnih, klasika..'}]->(TopGun),
+  (Milos)-[:RECENZIJA {ocena:8, komentar:'Nije los, odgledajte.'}]->(TopGun),
+  (Stefan)-[:RECENZIJA {ocena:5, komentar:'Prosek..'}]->(TopGun),
+  (Mihajlo)-[:RECENZIJA {ocena:7, komentar:'Onako, moze da prodje'}]->(TheDevilsAdvocate),
+  (Nina)-[:RECENZIJA {ocena:9, komentar:'Nije los, odgledajte.'}]->(TheMatrix),
+  (Petra)-[:RECENZIJA {ocena:3, komentar:'Ocena samo zbog glumaca.'}]->(TheMatrix)
+  
+  
+  
+CREATE (TestVest1:Vest {id:"7e8aa697-6846-40ac-a661-8f26f0dc26b5",opis:"Phil Lord and Christopher Miller's Connected movie gets a new title and a Netflix release. The latest animated comedy from the producing team that created Spider-Man: Into the Spiderverse concerns a normal family on a roadtrip who find themselves smack dab in the middle of the robot apocalypse. The first trailer for Connected dropped way back in March, but thanks to COVID the film never received its planned 2020 release.Netflix of course has become a major player when it comes to feature film releases, recently announcing a huge 2021 slate that will see the streamer putting out more than one movie a week, with major films like Dwayne Johnson’s Red Notice, Zack Snyder’s Army of the Dead and Leonardo DiCaprio and Jennifer Lawrence's Don’t Look Up headlining the list. And the biggest advantage to Netflix having this huge slate of movies, now including Lord and Miller's robot apocalypse film?",
+datumPostavljanja: '2020-02-17',brojLajkova: '72',objavio: 'Forbs',naslov: 'Anna Paquin Interview: Flack Season 1',slika:'images/Library/vest1.jpg' })
+
+
+CREATE (TestVest2:Vest {id:"4eb2000a-12d6-451e-b99e-ed72ebb1c3b4",opis:"Judas and the Black Messiah star Daniel Kaluuya reveals he was pitched the role of Fred Hampton while filming reshoots for Black Panther. The upcoming biopic is directed by Shaka King. Working from a script he co-wrote with Will Berson, Judas and the Black Messiah unfolds in the 1960s. It focuses on the true story of William O’Neal (Lakeith Stanfield), a career thief who becomes an FBI informant and infiltrates the Black Panther Party with the goal of taking down its influential chairman Fred Hampton (Kaluuya). The drama has been steadily gathering attention as it heads for a premiere on February 12, with many industry analysts expecting the film to garner major awards recognition.",
+datumPostavljanja: '2019-10-30',brojLajkova: '36',objavio: 'MyPeopleMagazin',naslov: 'Evan Stern & Tyler Johnston Interview: Letterkenny Season 9',slika:'images/Library/vest2.jpg'  })
+
+
+CREATE (TestVest3:Vest {id:"0982d500-a2d5-41c8-af5b-d4a4e71b2ff6",opis:"Funnily enough, I got approached doing these reshoots for Black Panther. Ryan Coogler pulled me to the side and was like, “We’re making the Fred Hampton film, and we’d love you to play Fred Hampton.” And then they sent me a two-page treatment, and it was one of the best treatments I’ve ever seen, because it was so clear and it knew what it was. Then I sat down with Shaka King, the director, in New York, because I was still promoting Get Out. That was probably two years before we started shooting. It was a long process before we got the green light.",
+datumPostavljanja: '2018-12-31',brojLajkova: '58',objavio: 'rotenTomatoes',naslov: "WandaVision Theory: Scarlet Witch's Fake World Is A Prison For Witches",slika:'images/Library/vest3.jpg' })
+
+
+CREATE (TestVest4:Vest {id:"4a343f05-c6bf-44b9-b678-9601862f8620",opis:"As activists continue to rally around the same issues which Hampton devoted himself to, decrying the injustices of capitalism and calling for solidarity across racial lines, the film could potentially serve as a useful reminder that people who are rightly viewed as heroic today were harassed and even assassinated in the prime of their lives. It’s a powerful story to tell. Kaluuya, along with the rest of the cast of Judas and the Black Messiah, will hopefully bring that powerful narrative to a wide swath of viewers when the biopic arrives in a matter of weeks.",
+datumPostavljanja: '2019-02-13',brojLajkova: '122',objavio: 'rotenTomatoes',naslov: 'Katheryn Winnick Interview: The Marksman',slika:'images/Library/vest4.jpg'  })
+
+
+CREATE (TestVest5:Vest {id:"ae65e5fd-3fbf-4449-88b8-d6fd0064b5eb",opis:"The showdown between Godzilla and King Kong has been greatly anticipated since the early days of the Monsterverse when it first became clear that cinema’s two most famous beasts would be fated to share the screen. Fans will finally get to see that battle when the film releases on March 26.The upcoming film will be Godzilla and Kong’s first proper showdown since 1962’s King Kong vs. Godzilla. While that first film wasn’t anyone near today’s budgets or production standards, it’s remained something of a cult-classic simply because of its two stars. King Kong vs. Godzilla ended with Kong victorious and Godzilla’s survival uncertain. Now, finally, the rematch is almost here.",
+datumPostavljanja: '2020-09-08',brojLajkova: '0',objavio: 'Forbs',naslov: 'Clone Wars Revealed Why Anakin Fully Became Vader After Mustafar',slika:'images/Library/vest5.jpg'  })
+
+
+CREATE (TestVest6:Vest {id:"a22d39bb-4228-4407-aa47-4eb5cb024f39",opis:"One big question lingering in the background of the Monsterverse is where the story will go after Godzilla vs. Kong releases. No plans have been announced for future films, and if it’s true that the showdown will have a definitive winner and loser, then the franchise will be down to one lead monster instead of two. While there are plenty of classic kaiju and movie monsters that could be pulled into future projects, none of them have anywhere near the popularity or box office pull as Godzilla and Kong.",
+datumPostavljanja: '2021-06-09',brojLajkova: '8',objavio: 'MyPeopleMagazin',naslov:"Cobra Kai Honest Trailer Highlights Show's Vicious Circle of Bullying",slika:'images/Library/vest6.jpg'})
+
+
+CREATE (TestVest7:Vest {id:"f3961aac-8eb8-40bc-b2c5-d4b7c1a1940c",opis:"Mortal Kombat is finally returning to the big screen this year with a new live-action film directed by Simon McQuoid and produced by James Wan (The Conjuring, Aquaman). The film will feature an ensemble cast of star actors and martial artists portraying the eclectic collection of fighters from the popular video game series. The movie is only a few months out from releasing, and there are plenty of details and theories for fans pour over while they wait.Mortal Kombat was first adapted into a live-action movie with Paul Anderson’s 1995 film of the same name, which remains one of the more positively-received video game movies to date. The film was campy and low-budget, but it was a fun ride with engaging fights that stayed true to the spirit of the franchise. ",
+datumPostavljanja: '2001-10-15',brojLajkova: '24',objavio: 'rotenTomatoes',naslov: 'Edge of Tomorrow Is Tom Cruises Best Chance At Another Mission: Impossible',slika:'images/Library/vest7.jpg'  })
+
+
+CREATE (TestVest8:Vest {id:"ff7b75d1-996a-4728-bfb8-150897dcc553",opis:"New fan art imagines what the Marvel Cinematic Universe's Captain Britain would look like if Superman star Henry Cavill was cast in the role. Captain Britain, aka Brain Braddock, is a classic Marvel comics superhero, having been created in the 1970s as a superhero for the British market. The character soon crossed over to the US market too, and has gone through many versions. The latest iteration is Betsy Braddock, originally the sister of Captain Britain and previously Psylocke in the X-Men, who took on the mantle of Captain Britain in the comics in 2018.",
+datumPostavljanja: '2011-01-18',brojLajkova: '98',objavio: 'MyPeopleMagazin',naslov: 'How Into The Dark Season 3 Can Fix Past Seasons Mistakes',slika:'images/Library/vest8.jpg'  })
+
+
+CREATE (TestVest9:Vest {id:"a438377e-0f98-4918-9930-a0aa99a338bc",opis:"Cavill, meanwhile, has played Superman in a trio of films by Zack Snyder, helping to launch the DC Extended Universe with 2013's Man of Steel and reprising the role twice, first in 2016's Batman V Superman: Dawn of Justice and 2017's Justice League. There were plans for a five-movie arc featuring Cavill as Superman, but those were scuppered due to the failure of the theatrical version of Justice League, though Snyder will be releasing his director's cut of that movie on HBO Max in March, hoping to restore at least the last part of his trilogy to its original intent. There have been rumors that Cavill is in Marvel's plans to star as Captain Britain.",
+datumPostavljanja: '2012-05-20',brojLajkova: '56',objavio: 'rotenTomatoes',naslov:'Priyanka Chopra Jonas & Adarsh Gourav Interview: The White Tiger',slika:'images/Library/vest9.jpg'  })
+
+
+CREATE (TestVest10:Vest {id:"a438377e-0f98-4918-9930-a0aa99a312bc",opis:"There's no doubt Cavill would make a fine Captain Britain. Not only is he from England, he has proven he is able to effectively portray a superhero with strength, charm and complexity. Despite this, it's unclear whether Cavill would be able to take on the role, especially in light of rumors that he has signed a contract to reprise his role of Superman in three more films.Whoever ends up getting cast, there is little doubt that Captain Britain will appear in the MCU at some point, if not in the current phase then some time in the next. Back in 2017, Marvel Studios head Kevin Feige confirmed that there had been talks about finding a way to introduce the character to the movies, and with the universe moving on from the Infinity Saga, it is increasingly likely that the character will debut. Whether he's played by Cavill or not remains to be seen, but this art makes a strong case for casting the British superhero star.",
+datumPostavljanja: '2015-08-01',brojLajkova: '32',objavio: 'MyPeopleMagazin',naslov: 'Marvel is Giving Guardians of The Galaxy A Major Promotion',slika:'images/Library/vest10.jpg'  })
+
+MATCH (vest:Vest { id:"7e8aa697-6846-40ac-a661-8f26f0dc26b5" }),(film:Film { nazivFilma: "The Matrix" }) CREATE (vest)-[:ABOUT]->(film)
+
+MATCH (vest:Vest { id:"4eb2000a-12d6-451e-b99e-ed72ebb1c3b4" }),(film:Film { nazivFilma: "Top Gun" }) CREATE (vest)-[:ABOUT]->(film)
+
+MATCH (vest:Vest { id:"0982d500-a2d5-41c8-af5b-d4a4e71b2ff6" }),(film:Film { nazivFilma: "Speed Racer" }) CREATE (vest)-[:ABOUT]->(film)
+
+MATCH (vest:Vest { id:"4a343f05-c6bf-44b9-b678-9601862f8620" }),(film:Film { nazivFilma: "The Matrix" }) CREATE (vest)-[:ABOUT]->(film)
+
+MATCH (vest:Vest { id:"ae65e5fd-3fbf-4449-88b8-d6fd0064b5eb" }),(film:Film { nazivFilma: "Top Gun" }) CREATE (vest)-[:ABOUT]->(film)
+
+MATCH (vest:Vest { id:"a22d39bb-4228-4407-aa47-4eb5cb024f39" }),(film:Film { nazivFilma: "The Matrix" }) CREATE (vest)-[:ABOUT]->(film)
+
+
+
+
+MATCH (vest:Vest { id:"f3961aac-8eb8-40bc-b2c5-d4b7c1a1940c" }),(serija:Serija { nazivSerije: "Chernobyl" }) CREATE (vest)-[:ABOUT]->(serija)
+
+MATCH (vest:Vest { id:"ff7b75d1-996a-4728-bfb8-150897dcc553" }),(serija:Serija { nazivSerije: "Chernobyl"  }) CREATE (vest)-[:ABOUT]->(serija)
+
+MATCH (vest:Vest { id:"a438377e-0f98-4918-9930-a0aa99a338bc" }),(serija:Serija { nazivSerije: "Band of Brothers" }) CREATE (vest)-[:ABOUT]->(serija)
+
+MATCH (vest:Vest { id:"a438377e-0f98-4918-9930-a0aa99a312bc" }),(serija:Serija { nazivSerije: "Band of Brothers" }) CREATE (vest)-[:ABOUT]->(serija)

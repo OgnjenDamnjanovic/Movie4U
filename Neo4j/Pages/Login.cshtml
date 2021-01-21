@@ -1,0 +1,119 @@
+﻿@page
+@model MyApp.Namespace.LoginModel
+@{
+}
+
+
+
+<!-- bootstrap-pop-up -->
+	<div>
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					Sign In & Sign Up
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
+				</div>
+				<section>
+					<div class="modal-body">
+						<div class="w3_login_module">
+							<div class="module form-module">
+							  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
+								<div class="tooltip">Click Me</div>
+							  </div>
+							  <div class="form">
+								<h3>Login to your account</h3>
+								<form method="post">
+								  <input type="text" placeholder="Email" required="" asp-for="email">
+								  <input type="password" placeholder="Password" required="" asp-for="sifra">
+                                  <span class="error">@Model.ErrorMessage</span>
+								  <input type="submit" value="Login" asp-page-handler="Login">
+								</form>
+							  </div>
+							  <div class="form">
+								<h3>Create an account</h3>
+								<form method="post" id="signupform">
+								  <input type="text" placeholder="First Name" required="" asp-for="noviKorisnik.ime">
+                                  <input type="text" placeholder="Last Name" required="" asp-for="noviKorisnik.prezime">
+								  <input type="email" id="email1" placeholder="Email Address" required="" style="margin-bottom:0px;" asp-for="noviKorisnik.email"> 
+                                  <label class="error error-hidden" style="visibility: hidden;">Please enter a valid email address.</label>
+								  <labe class="error error-hidden">@Model.ErrorMessage2</labe>
+                                  <input type="password" placeholder="Password" required="" asp-for="noviKorisnik.sifra">
+								  <input type="submit" value="Register" asp-page-handler="SignUp">
+								</form>
+							  </div>
+							  <div class="cta"><a href="#">Forgot your password?</a></div>
+							</div>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</div>
+	<script>
+		$('.toggle').click(function(){
+		  // Switches the Icon
+		  $(this).children('i').toggleClass('fa-pencil');
+		  // Switches the forms  
+		  $('.form').animate({
+			height: "toggle",
+			'padding-top': 'toggle',
+			'padding-bottom': 'toggle',
+			opacity: "toggle"
+		  }, "slow");
+		});
+	</script>
+<!-- //bootstrap-pop-up -->
+
+<script>
+if(@Model.WhatToShow == 0)
+{
+    $('.form').animate({
+			height: "toggle",
+			'padding-top': 'toggle',
+			'padding-bottom': 'toggle',
+			opacity: "toggle"
+		  }, "slow");
+}
+</script>
+
+<script src="js/validateEmail.js"></script>
+<script>
+function emailError()
+{
+	let email=document.querySelector("#email1");
+	if(validateEmail(email.value))
+	{
+		email.parentElement.querySelector(".error").style.visibility="hidden";
+		return false;
+	}
+	else
+	{
+							
+		email.parentElement.querySelector(".error").style.visibility="visible";
+		return true;
+	}
+}
+
+element=document.querySelector("#email1");
+element.onfocus=function()
+{	
+	this.onblur=()=>{ emailError();}
+}
+element.oninput=function(e)
+{
+	emailError();
+}
+
+document.querySelector("#signupform").onsubmit=()=>
+{
+    let error=false;
+    if(emailError())
+		error=true;
+
+    if(error)
+	{
+		return false;
+	}
+	return true;
+}
+</script>
