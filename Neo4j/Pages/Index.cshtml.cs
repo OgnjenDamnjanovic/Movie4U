@@ -27,7 +27,18 @@ namespace Neo4j.Pages
 
             string email = HttpContext.Session.GetString("email");
             if(!String.IsNullOrEmpty(email))
-                Message = "Welcome " + email;
+            {
+                Dictionary<string, object> queryDict0 = new Dictionary<string, object>();
+                queryDict0.Add("email", email);
+
+                var query0 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(k:Korisnik) where k.email = {email} return k",
+                                                           queryDict0, CypherResultMode.Set);
+
+                Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query0).FirstOrDefault();
+                if(k.tip == 1)
+                    Message = "Admin";
+                else Message = "User";
+            }
 
             var query = new Neo4jClient.Cypher.CypherQuery(" match (film:Film) return film order by film.godina desc limit 6;",
                                                            new Dictionary<string, object>(), CypherResultMode.Set);

@@ -27,13 +27,24 @@ namespace MyApp.Namespace
         }
         public void OnGetAsync(int id)
         {
-               Neo4jClient.GraphClient client = ClientManager.GetSession();
+            Neo4jClient.GraphClient client = ClientManager.GetSession();
 
-               string email = HttpContext.Session.GetString("email");
-                if(!String.IsNullOrEmpty(email))
-                    Message = "Welcome " + email;
+            string email = HttpContext.Session.GetString("email");
+            if(!String.IsNullOrEmpty(email))
+            {
+                Dictionary<string, object> queryDict0 = new Dictionary<string, object>();
+                queryDict0.Add("email", email);
 
-            var query = new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) return vest order by vest.datumPostavljanja desc limit 5",
+                var query0 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(k:Korisnik) where k.email = {email} return k",
+                                                           queryDict0, CypherResultMode.Set);
+
+                Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query0).FirstOrDefault();
+                if(k.tip == 1)
+                    Message = "Admin";
+                else Message = "User";
+            }
+
+            var query = new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) return vest order by vest.datumPostavljanja desc limit 4",
                                                            new Dictionary<string, object>(), CypherResultMode.Set);
 
              vestiByDate = ((IRawGraphClient)client).ExecuteGetCypherResults<Vest>(query).ToList();
@@ -43,7 +54,7 @@ namespace MyApp.Namespace
                  v.opis=(v.opis.Length>170)?v.opis.Substring(0,165)+"...":v.opis;
                  
              }
-             query=new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) return vest order by vest.brojLajkova desc limit 6",
+             query=new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) return vest order by toInt(vest.brojLajkova) desc limit 6",
                                                            new Dictionary<string, object>(), CypherResultMode.Set);
             vestiMostLiked = ((IRawGraphClient)client).ExecuteGetCypherResults<Vest>(query).ToList();
             HttpContext.Session.Remove("pagingState");
@@ -57,7 +68,7 @@ namespace MyApp.Namespace
             int? pagingState=HttpContext.Session.GetInt32("pagingState");
             if(pagingState==null) return new JsonResult("error");
 
-             var query=new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) return vest order by vest.datumPostavljanja desc skip {pagingState} limit 5 ",
+             var query=new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) return vest order by vest.datumPostavljanja desc skip {pagingState} limit 4 ",
                                                            new Dictionary<string, object>(), CypherResultMode.Set);
 
                List<Vest> noveVesti = ((IRawGraphClient)client).ExecuteGetCypherResults<Vest>(query).ToList();
@@ -84,7 +95,7 @@ namespace MyApp.Namespace
                 }
             catch(FileNotFoundException ex)
             {
-                return "";
+                return ex.Message;
             }
             
         }

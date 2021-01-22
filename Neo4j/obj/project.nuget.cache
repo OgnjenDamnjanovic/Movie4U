@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DvTJmoVsfylxrHvrKREd6SfLLcvaQgVKNBQhBhKzMbJDUbEQdaW5lzM8zkRStZ4Sblr+QqBr4yPudnLJKwxzxw==",
+  "dgSpecHash": "qztlpqKJEHfbCenD+t63BT/K7JNT+t3r5qjL3WGYsvACb5kYNDcj8dFqA1/zb4M2o3IEA1pX4TpCN4hdr8pywA==",
   "success": true,
-  "projectFilePath": "E:\\Napredne baze projekti\\Neo4j\\Neo4j.csproj",
+  "projectFilePath": "E:\\Napredne baze projekti\\NeoGit\\Neo4j\\Neo4j.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
     "C:\\Users\\Nikola\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",

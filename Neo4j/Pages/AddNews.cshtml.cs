@@ -25,10 +25,21 @@ namespace MyApp.Namespace
         [BindProperty]
         public Vest novaVest { get; set; }
         public string Message {get; set;}
-        public void OnGet()
+        public ActionResult OnGet()
         {
+            string email=HttpContext.Session.GetString("email");
+            if (email==null) return RedirectToPage("Login");
 
-            //provera tipa korisnika
+           Neo4jClient.GraphClient client = ClientManager.GetSession();
+           var query = new Neo4jClient.Cypher.CypherQuery($"match (korisnik:Korisnik{{email:\"{email}\"}}) return korisnik",new Dictionary<string, object>() , CypherResultMode.Set);
+
+            Korisnik korisnik=((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query).First();
+            if(korisnik.tip==0) return  RedirectToPage("/Index");
+            else
+            {
+                Message = "Admin";
+                return Page();
+            }
         }
 
         public ActionResult OnPost()

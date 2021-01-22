@@ -35,7 +35,18 @@ namespace MyApp.Namespace
 
             string email = HttpContext.Session.GetString("email");
             if(!String.IsNullOrEmpty(email))
-                Message = "Welcome " + email;
+            {
+                Dictionary<string, object> queryDict0 = new Dictionary<string, object>();
+                queryDict0.Add("email", email);
+
+                var query0 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(k:Korisnik) where k.email = {email} return k",
+                                                           queryDict0, CypherResultMode.Set);
+
+                Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query0).FirstOrDefault();
+                if(k.tip == 1)
+                    Message = "Admin";
+                else Message = "User";
+            }
 
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             queryDict.Add("movie", movie);
@@ -102,6 +113,37 @@ namespace MyApp.Namespace
             List<Film> azuriraniFilm = ((IRawGraphClient)client).ExecuteGetCypherResults<Film>(query1).ToList();
 
             return RedirectToPage("/Movie", new {movie=film.nazivFilma});
+        }
+
+
+        public IActionResult OnPostAdd()
+        {
+            Neo4jClient.GraphClient client = ClientManager.GetSession();
+
+            string email = HttpContext.Session.GetString("email");
+            if(String.IsNullOrEmpty(email))
+                return RedirectToPage("/Login");
+
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            queryDict.Add("email", email);
+            queryDict.Add("nazivFilma", film.nazivFilma);
+
+            var query = new Neo4jClient.Cypher.CypherQuery("MATCH (k)-[r:WATCHLIST]->(f) WHERE k.email = {email} AND f.nazivFilma = {nazivFilma} return k",
+                                                           queryDict, CypherResultMode.Set);
+
+            Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query).FirstOrDefault();
+
+            if(k!=null)
+            {
+                return RedirectToPage("/Movie", new {movie=film.nazivFilma, success="false"}); //vec ima ovaj film u watchlist
+            }
+
+            var query1 = new Neo4jClient.Cypher.CypherQuery("MATCH (k:Korisnik),(f:Film) WHERE k.email = {email} AND f.nazivFilma = {nazivFilma} CREATE (k)-[r:WATCHLIST]->(f) return r",
+                                                           queryDict, CypherResultMode.Set);
+
+            List<string> novaVeza = ((IRawGraphClient)client).ExecuteGetCypherResults<string>(query1).ToList();
+
+            return RedirectToPage("/Movie", new {movie=film.nazivFilma, success="true"});
         }
     }
 }

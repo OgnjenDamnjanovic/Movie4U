@@ -14,6 +14,7 @@ namespace MyApp.Namespace
     public class News_singleModel : PageModel
     {
         public List<Vest> najnovijeVesti { get; set; }
+        public List<Vest> slicneVesti {get; set;}
         [BindProperty]
          public Vest trazenaVest { get; set; }
          public string Message {get; set;}
@@ -22,9 +23,20 @@ namespace MyApp.Namespace
                
                Neo4jClient.GraphClient client = ClientManager.GetSession();
 
-               string email = HttpContext.Session.GetString("email");
-                if(!String.IsNullOrEmpty(email))
-                    Message = "Welcome " + email;
+            string email = HttpContext.Session.GetString("email");
+            if(!String.IsNullOrEmpty(email))
+            {
+                Dictionary<string, object> queryDict0 = new Dictionary<string, object>();
+                queryDict0.Add("email", email);
+
+                var query0 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(k:Korisnik) where k.email = {email} return k",
+                                                           queryDict0, CypherResultMode.Set);
+
+                Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query0).FirstOrDefault();
+                if(k.tip == 1)
+                    Message = "Admin";
+                else Message = "User";
+            }
 
             var query = new Neo4jClient.Cypher.CypherQuery($"match(vest:Vest) where vest.id='{id}' return vest;",
                                                            new Dictionary<string, object>(), CypherResultMode.Set);
@@ -39,13 +51,34 @@ namespace MyApp.Namespace
                                                            new Dictionary<string, object>(), CypherResultMode.Set);
                                                           
                  najnovijeVesti= ((IRawGraphClient)client).ExecuteGetCypherResults<Vest>(query).ToList();
+
+                query = new Neo4jClient.Cypher.CypherQuery($"match (vestTr:Vest{{id:\"{trazenaVest.id}\"}})-[:ABOUT]->(media)<-[:ABOUT]-(vestSlicna:Vest) return vestSlicna ",
+                                                           new Dictionary<string, object>(), CypherResultMode.Set);
+                                                          
+                 slicneVesti= ((IRawGraphClient)client).ExecuteGetCypherResults<Vest>(query).ToList();
                 
-                 return Page();}
+                 return Page();
+            }
              
         }
-        public void OnPostLike(string id)
+        public IActionResult OnPostLike(string id)
         {
-           
+            string email = HttpContext.Session.GetString("email");
+            if(String.IsNullOrEmpty(email))
+                return RedirectToPage("/Login");
+
+            Neo4jClient.GraphClient client = ClientManager.GetSession();
+            trazenaVest.brojLajkova++;
+            Dictionary<string, object> queryDict = new Dictionary<string, object>();
+            queryDict.Add("id", id);
+            queryDict.Add("brojLajkova", trazenaVest.brojLajkova);
+
+            var query0 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(v:Vest) where v.id = {id} set v.brojLajkova = {brojLajkova} return v",
+                                                           queryDict, CypherResultMode.Set);
+
+            Vest azuriranaVest = ((IRawGraphClient)client).ExecuteGetCypherResults<Vest>(query0).FirstOrDefault();
+
+            return RedirectToPage("/News-single", new {id=id});
         }
     }
 }

@@ -38,7 +38,7 @@
 <form method="POST" id="dodajVest"><h1>Unesite podatke o vesti </h1></br></br>
 <input type="hidden" asp-for="novaVest.id"> 
 <span class="space-out">
-   <div class="labeled-input"> <label>Naslov:</label> <input style="width:500px"type="text" asp-for="novaVest.naslov"></div>
+   <div class="labeled-input"> <label>Naslov:</label> <input id="add-naslov"style="width:500px"type="text" asp-for="novaVest.naslov"></div>
    
 </span></br>
 
@@ -48,7 +48,7 @@
 <div style="display: flex;flex-direction:row; justify-content:space-between; width:50%;">
 <div>
 <label>Unesite opis:</label><br/>
-<textarea asp-for="novaVest.opis" rows="10" cols="50"></textarea> <br><br><br>
+<textarea id="add-opis"asp-for="novaVest.opis" rows="10" cols="50"></textarea> <br><br><br>
 </div>
 
 <div style="margin-left: 10%;">
@@ -78,6 +78,14 @@
 
 <script>
     document.querySelector("#dodajVest").onsubmit=()=>{
+        if(document.querySelector("#imported-img").src=="https://localhost:5001/addnews"||
+        document.querySelector("#add-opis").value==""||document.querySelector("#add-naslov").value=="")
+        {
+
+            alert('niste uneli sve podatke');
+            return false;
+        }
+
         document.getElementById("serialized-picture").value=document.querySelector("#imported-img").src;
         let string="";
         document.querySelectorAll(".pomenuti-data").forEach((el)=>

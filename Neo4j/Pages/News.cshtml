@@ -4,7 +4,7 @@
 }
 
 <head>
-<title>One Movies an Entertainment Category Flat Bootstrap Responsive Website Template | News :: w3layouts</title>
+<title>Movie4U | News</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -45,25 +45,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- start-smoth-scrolling -->
 </head>
 
-<div class="general_social_icons">
-	<nav class="social">
-		<ul>
-			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
-			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
-			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
-			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
-		</ul>
-  </nav>
-</div>
+
 <!-- faq-banner -->
 	<div class="faq">
 			<div class="container">
-				<div class="agileits-news-top">
-					<ol class="breadcrumb">
-					  <li><a href="/Index">Home</a></li>
-					  <li class="active">News</li>
-					</ol>
-				</div>
 				<div class="agileinfo-news-top-grids">
 					<div class="col-md-8 wthree-top-news-left">
 
@@ -82,7 +67,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 										
 											<div class="col-md-6 w3-agileits-news-left" style="padding:7px;margin-bottom: 15px; height:fit-content; border-bottom: 2px dotted rgb(255,152,0);border-right: 2px dotted rgb(255,152,0);">
 												<div class="col-sm-5 wthree-news-img">
-													<a href="News-single?id=@Model.vestiByDate[i].id"><img style="height: 150px;"src=@Model.vestiByDate[i].slika /></a>
+													<a href="News-single?id=@Model.vestiByDate[i].id"><img style="width:150px; height: 100px;"src=@Model.vestiByDate[i].slika /></a>
 												</div>
 												<div class="col-sm-7 wthree-news-info">
 													<h5><a href="News-single?id=@Model.vestiByDate[i].id">@Model.vestiByDate[i].naslov</a></h5>
@@ -166,7 +151,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 												  document.querySelector("#insert-here").innerHTML+=
 												  `<div class=\"col-md-6 w3-agileits-news-left" style=\"padding:7px;margin-bottom: 15px; height:fit-content; border-bottom: 2px dotted rgb(255,152,0);border-right: 2px dotted rgb(255,152,0);\">
 												<div class=\"col-sm-5 wthree-news-img\">
-													<a href=\"News-single?id=${vest["id"]}\"><img style=\"height:150px\" src=\"${vest["slika"]}\"/></a>
+													<a href=\"News-single?id=${vest["id"]}\"><img style=\"width:150px; height: 100px;\" src=\"${vest["slika"]}\"/></a>
 												</div>
 												<div class="col-sm-7 wthree-news-info">
 													<h5><a href="News-single?id=${vest["id"]}">${vest["naslov"]}</a></h5>

@@ -24,14 +24,26 @@ namespace MyApp.Namespace
 
         public void OnGet(string tvShow, string season)
         {
+            Neo4jClient.GraphClient client = ClientManager.GetSession();
             string email = HttpContext.Session.GetString("email");
             if(!String.IsNullOrEmpty(email))
-                Message = "Welcome " + email;
+            {
+                Dictionary<string, object> queryDict0 = new Dictionary<string, object>();
+                queryDict0.Add("email", email);
+
+                var query0 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(k:Korisnik) where k.email = {email} return k",
+                                                           queryDict0, CypherResultMode.Set);
+
+                Korisnik k = ((IRawGraphClient)client).ExecuteGetCypherResults<Korisnik>(query0).FirstOrDefault();
+                if(k.tip == 1)
+                    Message = "Admin";
+                else Message = "User";
+            }
 
             Dictionary<string, object> queryDict = new Dictionary<string, object>();
             queryDict.Add("season", season);
             queryDict.Add("tvShow", tvShow);
-            Neo4jClient.GraphClient client = ClientManager.GetSession();
+            
             
             var query = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match (serija)-[:SEASON]->(sezona) where sezona.nazivSezone = {season} and serija.nazivSerije = {tvShow} return sezona",
                                                            queryDict, CypherResultMode.Set);

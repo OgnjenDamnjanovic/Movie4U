@@ -4,7 +4,7 @@
 }
 
 <head>
-<title>One Movies an Entertainment Category Flat Bootstrap Responsive Website Template | Single :: w3layouts</title>
+<title>Movie4U | News</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -47,26 +47,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 </head>
 
-<div class="general_social_icons">
-	<nav class="social">
-		<ul>
-			<li class="w3_twitter"><a href="#">Twitter <i class="fa fa-twitter"></i></a></li>
-			<li class="w3_facebook"><a href="#">Facebook <i class="fa fa-facebook"></i></a></li>
-			<li class="w3_dribbble"><a href="#">Dribbble <i class="fa fa-dribbble"></i></a></li>
-			<li class="w3_g_plus"><a href="#">Google+ <i class="fa fa-google-plus"></i></a></li>				  
-		</ul>
-  </nav>
-</div>
+
 <!-- faq-banner -->
 	<div class="faq">
 			<div class="container">
-				<div class="agileits-news-top">
-					<ol class="breadcrumb">
-					  <li><a href="index.html">Home</a></li>
-					   <li><a href="news.html">News</a></li>
-					  <li class="active">@Model.trazenaVest.naslov</li>
-					</ol>
-				</div>
 				<div class="agileinfo-news-top-grids">
 					<div class="col-md-8 wthree-top-news-left">
 						<div class="wthree-news-left">
@@ -74,14 +58,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 								<img src=@Model.trazenaVest.slika alt="" />
 								<h4>@Model.trazenaVest.naslov</h4>
 								<div class="s-author">
-									<p>Posted By <a href="#"><i class="fa fa-user" aria-hidden="true"></i> @Model.trazenaVest.objavio</a> &nbsp;&nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>@Model.trazenaVest.datumPostavljanja.ToShortDateString() &nbsp;&nbsp; <a href="#"><i class="fa fa-comments" aria-hidden="true"></i> Comments (10)</a></p>
+									<p>Posted By <i class="fa fa-user" aria-hidden="true"></i> @Model.trazenaVest.objavio &nbsp;&nbsp; <i class="fa fa-calendar" aria-hidden="true"></i>@Model.trazenaVest.datumPostavljanja.ToShortDateString() &nbsp;&nbsp;</p>
 								</div>
 								<div id="fb-root"></div>
 								<div class="news-shar-buttons">
 									<ul>
 										<li><form method="POST" >
-												<input type="text" hidden asp-for="trazenaVest.id" asp-route-id=@Model.trazenaVest.id> 
-												<button asp-page-handler="Like" type="submit">I like this  <i class="fa fa-thumbs-up" aria-hidden="true"></i></button><h4 style="display: inline; color:orange;">   @Model.trazenaVest.brojLajkova</h4>
+												<input type=hidden asp-for="trazenaVest.brojLajkova"> 
+												<button asp-route-id="@Model.trazenaVest.id" asp-page-handler="Like" type="submit">I like this  <i class="fa fa-thumbs-up" aria-hidden="true"></i></button><h4 style="display: inline; color:orange;">   @Model.trazenaVest.brojLajkova</h4>
 											</form>
 											
 										</li>
@@ -107,14 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							</div>
 						</div>
 					
-						<!-- agile-comments -->
-						<div class="agile-news-comments">
-							<div class="agile-news-comments-info">
-								<h4>Comments</h4>
-								<div class="fb-comments" data-href="https://w3layouts.com/" data-width="100%" data-numposts="5"></div>
-							</div>
-						</div>
-						<!-- //agile-comments -->
+						
 						<div class="news-related">
 							
 						</div>
@@ -145,7 +122,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 									</div>
 									}
 									
+									<h3 style="color:#ff9800; ">Related news</h3>
+									<hr>
 									
+									@foreach (Model.Vest v in Model.slicneVesti)
+									{
+									
+									<div class="top-news-grid">
+										<div class="top-news-grid-heading">
+											<a href="news-single?id=@v.id">@v.naslov</a>
+										</div>
+										<div class="w3ls-news-t-grid top-t-grid">
+											<ul>
+												<li><a href="#"><i class="fa fa-clock-o"></i> @v.datumPostavljanja.ToShortDateString()</a></li>
+												<li><a href="#"><i class="fa fa-user"></i> @v.objavio</a></li>
+											</ul>
+										</div>
+									</div>
+									}
 								</div>
 							</div>
 						</div>
@@ -154,12 +148,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="clearfix"> </div>
 				</div>
 			</div>
-				<div class="w3l-latest-movies-grids">
-					<h4 class="latest-text w3_latest_text">Latest Movies</h4>
-						<div class="container">
-								
-								 
-						   </div>
-			</div>
+				
 	</div>
 <!-- //faq-banner -->
+
