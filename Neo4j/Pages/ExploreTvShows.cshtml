@@ -26,14 +26,14 @@
 						<form style="margin-top:60px; margin-bottom:60px; display:flex; flex-direction:row; justify-content:space-between;" method="get">
 								
 							<div>
-								<label class="label-left">Zanr:</label>
+								<label class="label-left">Genre:</label>
 								<select asp-for="zanrFilter" asp-items="Model.zanrovi" class="input-search"> 
 									<option value="">All</option>
 								</select> 
 							</div>
 
 							<div>
-								<label class="label-left">Godina:</label>
+								<label class="label-left">Pilot year:</label>
 								<select asp-for="godinaFilter" class="input-search"> 
 									<option value="">All</option>
 									@for(int i=2021; i>=1986; i--)
@@ -44,18 +44,19 @@
 							</div>
 
 							<div>
-								<label class="label-left">Ocena: od</label>
-								<input type=number min="0" max="10" asp-for="ocenaOdFilter" class="input-search"> 
-								<label style="margin-left: 5px; margin-right:5px;">do</label>
-								<input type=number min="0" max="10" asp-for="ocenaDoFilter" class="input-search">
+								<label class="label-left">Language:</label>
+								<select asp-for="jezikFilter" asp-items="Model.jezici" class="input-search"> 
+									<option value="">All</option>
+								</select> 
 							</div>
 
 							<div>
-								<label class="label-left">Broj sezona: od</label>
-								<input type=number min="0" max="50" asp-for="brojSezonaOdFilter" class="input-search"> 
-								<label style="margin-left: 5px; margin-right:5px;">do</label>
-								<input type=number min="0" max="50" asp-for="brojSezonaDoFilter" class="input-search">
+								<label class="label-left">Rating: from</label>
+								<input type=number min="0" max="10" asp-for="ocenaOdFilter" class="input-search"> 
+								<label style="margin-left: 5px; margin-right:5px;">to</label>
+								<input type=number min="0" max="10" asp-for="ocenaDoFilter" class="input-search">
 							</div>
+
 							<button style="width:300px;" type="Submit" class="btn btn-default">Search</button>
 							</form>
 

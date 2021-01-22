@@ -16,6 +16,8 @@ namespace MyApp.Namespace
     {
         [BindProperty]
         public SelectList zanrovi {get; set;}
+        [BindProperty]
+        public SelectList jezici {get;set;}
        
         [BindProperty(SupportsGet=true)]
         public string zanrFilter {get; set;}
@@ -26,9 +28,7 @@ namespace MyApp.Namespace
         [BindProperty(SupportsGet=true)]
         public string ocenaDoFilter {get; set;}
         [BindProperty(SupportsGet=true)]
-        public string brojSezonaOdFilter {get; set;}
-        [BindProperty(SupportsGet=true)]
-        public string brojSezonaDoFilter {get; set;}
+        public string jezikFilter {get; set;}
         [BindProperty(SupportsGet=true)]
         public string nazivFilter {get; set;}
         [BindProperty]
@@ -37,7 +37,6 @@ namespace MyApp.Namespace
         public void OnGet()
         {
             Neo4jClient.GraphClient client = ClientManager.GetSession();
-
             string email = HttpContext.Session.GetString("email");
             if(!String.IsNullOrEmpty(email))
                 Message = "Welcome " + email;
@@ -47,6 +46,12 @@ namespace MyApp.Namespace
 
             List<string> listaZanrova = ((IRawGraphClient)client).ExecuteGetCypherResults<string>(query).ToList();
             zanrovi = new SelectList(listaZanrova);  
+
+            var query3 = new Neo4jClient.Cypher.CypherQuery("start n=node(*) match(n:Serija) where exists(n.jezik) return distinct n.jezik",
+                                                           new Dictionary<string, object>(), CypherResultMode.Set);
+
+            List<string> listaJezika = ((IRawGraphClient)client).ExecuteGetCypherResults<string>(query3).ToList();
+            jezici = new SelectList(listaJezika);
             
             String queryString;
 
@@ -77,15 +82,25 @@ namespace MyApp.Namespace
                 else queryFilter += " and n.zanr = '" + zanrFilter + "'";
             }
 
-            /*if(!String.IsNullOrEmpty(godinaFilter))
+            if(!String.IsNullOrEmpty(godinaFilter))
             {
                 if(prvi)
                 {
-                    queryFilter += "where n.godina = " + godinaFilter;
+                    queryFilter += "where n.pilot = " + godinaFilter;
                     prvi = false;
                 }
-                else queryFilter += " and n.godina = " + godinaFilter;
-            }*/
+                else queryFilter += " and n.pilot = " + godinaFilter;
+            }
+
+            if(!String.IsNullOrEmpty(jezikFilter))
+            {
+                if(prvi)
+                {
+                    queryFilter += "where n.jezik = " + jezikFilter;
+                    prvi = false;
+                }
+                else queryFilter += " and n.jezik = " + jezikFilter;
+            }
             
             if(!String.IsNullOrEmpty(ocenaOdFilter))
             {

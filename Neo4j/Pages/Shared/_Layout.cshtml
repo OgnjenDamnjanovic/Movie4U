@@ -7,7 +7,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>One Movies an Entertainment Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
 <!-- for-mobile-apps -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -80,7 +79,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<li><i class="fa fa-phone" aria-hidden="true"></i> (+000) 123 345 653</li>
 					@if(Model.Message != null)
 					{
-					<li><a asp-page="/Index" asp-page-handler="Logout">Logout</a></li>
+					<li><a asp-page="/Index" asp-page-handler="Logout" style="width:104px;">Logout</a></li>
 					}
 					else
 					{
@@ -92,61 +91,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		</div>
 	</div>
 <!-- //header -->
-<!-- bootstrap-pop-up 
-	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					Sign In & Sign Up
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-				</div>
-				<section>
-					<div class="modal-body">
-						<div class="w3_login_module">
-							<div class="module form-module">
-							  <div class="toggle"><i class="fa fa-times fa-pencil"></i>
-								<div class="tooltip">Click Me</div>
-							  </div>
-							  <div class="form">
-								<h3>Login to your account</h3>
-								<form action="#" method="post">
-								  <input type="text" name="Username" placeholder="Username" required="">
-								  <input type="password" name="Password" placeholder="Password" required="">
-								  <input type="submit" value="Login">
-								</form>
-							  </div>
-							  <div class="form">
-								<h3>Create an account</h3>
-								<form action="#" method="post">
-								  <input type="text" name="Username" placeholder="Username" required="">
-								  <input type="password" name="Password" placeholder="Password" required="">
-								  <input type="email" name="Email" placeholder="Email Address" required="">
-								  <input type="text" name="Phone" placeholder="Phone Number" required="">
-								  <input type="submit" value="Register">
-								</form>
-							  </div>
-							  <div class="cta"><a href="#">Forgot your password?</a></div>
-							</div>
-						</div>
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-	<script>
-		$('.toggle').click(function(){
-		  // Switches the Icon
-		  $(this).children('i').toggleClass('fa-pencil');
-		  // Switches the forms  
-		  $('.form').animate({
-			height: "toggle",
-			'padding-top': 'toggle',
-			'padding-bottom': 'toggle',
-			opacity: "toggle"
-		  }, "slow");
-		});
-	</script> -->
-<!-- //bootstrap-pop-up -->
+
 <!-- nav -->
 	<div class="movies_nav">
 		<div class="container">
@@ -167,6 +112,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a asp-page="/ExploreMovies">Movies</a></li>
 							<li><a asp-page="/ExploreTvShows">tv - series</a></li>
 							<li><a asp-page="/News">news</a></li>
+							<li><a asp-page="/Contact">Contact Us</a></li>
+							@if(Model.Message=="Admin")
+							{
+								<li><a asp-page="/Admin">Admin</a></li>
+							}
+							@if(Model.Message=="User")
+							{
+								<li><a asp-page="/Profile">Profile</a></li>
+							}
 						</ul>
 					</nav>
 				</div>
@@ -194,35 +148,26 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 				</div>
 				<div class="col-md-6 w3ls_footer_grid_right">
-					<a href="index.html"><h2>One<span>Movies</span></h2></a>
+					<a asp-page="/Index"><img src="images/logo.png"></a>
 				</div>
 				<div class="clearfix"> </div>
 			</div>
 			<div class="col-md-5 w3ls_footer_grid1_left">
-				<p>&copy; 2016 One Movies. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
+				<p>&copy; 2021 Movie4U. All rights reserved.</p>
 			</div>
 			<div class="col-md-7 w3ls_footer_grid1_right">
 				<ul>
 					<li>
-						<a href="genres.html">Movies</a>
+						<a asp-page="/ExploreMovies">Movies</a>
 					</li>
 					<li>
-						<a href="faq.html">FAQ</a>
+						<a asp-page="/ExploreTvShows">TV Shows</a>
 					</li>
 					<li>
-						<a href="horror.html">Action</a>
+						<a asp-page="/News">News</a>
 					</li>
 					<li>
-						<a href="genres.html">Adventure</a>
-					</li>
-					<li>
-						<a href="comedy.html">Comedy</a>
-					</li>
-					<li>
-						<a href="icons.html">Icons</a>
-					</li>
-					<li>
-						<a href="contact.html">Contact Us</a>
+						<a asp-page="/Contact">Contact Us</a>
 					</li>
 				</ul>
 			</div>
